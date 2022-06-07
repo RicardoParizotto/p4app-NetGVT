@@ -90,31 +90,19 @@ parser SwitchIngressParser(
     }
 }
 
+//Considering 3 chunks of size 5
 
 Register<bit<32>, _>(1) LVT_chunk_0;
 Register<bit<32>, _>(1) LVT_chunk_1;
-Register<bit<32>, _>(1) LVT_chunk_2;
 
-//chunk 0
-Register<bit<32>, _>(1) LVT_pid_0;
-Register<bit<32>, _>(1) LVT_pid_1;
-Register<bit<32>, _>(1) LVT_pid_2;
-Register<bit<32>, _>(1) LVT_pid_3;
-Register<bit<32>, _>(1) LVT_pid_4;
 
-//chunk 1
-Register<bit<32>, _>(1) LVT_pid_5;
-Register<bit<32>, _>(1) LVT_pid_6;
-Register<bit<32>, _>(1) LVT_pid_7;
-Register<bit<32>, _>(1) LVT_pid_8;
-Register<bit<32>, _>(1) LVT_pid_9;
 
-//chunk
-Register<bit<32>, _>(1) LVT_pid_10;
-Register<bit<32>, _>(1) LVT_pid_11;
-Register<bit<32>, _>(1) LVT_pid_12;
-Register<bit<32>, _>(1) LVT_pid_13;
-Register<bit<32>, _>(1) LVT_pid_14;
+//chunk 0 1
+Register<bit<32>, _>(2) LVT_pid_0;
+Register<bit<32>, _>(2) LVT_pid_1;
+Register<bit<32>, _>(2) LVT_pid_2;
+Register<bit<32>, _>(2) LVT_pid_3;
+Register<bit<32>, _>(2) LVT_pid_4;
 
 Register<bit<32>, _>(1) GVT;
 
@@ -201,75 +189,7 @@ control SwitchIngress(
         }
     };
 
-    RegisterAction<bit<32>, _, bit<32>>(LVT_pid_5) Update_lvt_pid_5 = {
-    void apply(inout bit<32> value, out bit<32> rv) {
-            if ( hdr.gvt.pid == 5 ) value = hdr.gvt.value;
-            rv = value;
-        }
-    };
 
-    RegisterAction<bit<32>, _, bit<32>>(LVT_pid_6) Update_lvt_pid_6 = {
-    void apply(inout bit<32> value, out bit<32> rv) {
-            if ( hdr.gvt.pid ==6 ) value = hdr.gvt.value;
-            rv = value;
-        }
-    };
-
-    RegisterAction<bit<32>, _, bit<32>>(LVT_pid_7) Update_lvt_pid_7 = {
-    void apply(inout bit<32> value, out bit<32> rv) {
-            if ( hdr.gvt.pid == 7 ) value = hdr.gvt.value;
-            rv = value;
-        }
-    };
-
-    RegisterAction<bit<32>, _, bit<32>>(LVT_pid_8) Update_lvt_pid_8 = {
-    void apply(inout bit<32> value, out bit<32> rv) {
-            if ( hdr.gvt.pid == 8 ) value = hdr.gvt.value;
-            rv = value;
-        }
-    };
-    
-    RegisterAction<bit<32>, _, bit<32>>(LVT_pid_9) Update_lvt_pid_9 = {
-    void apply(inout bit<32> value, out bit<32> rv) {
-            if ( hdr.gvt.pid == 9 ) value = hdr.gvt.value;
-            rv = value;
-        }
-    };
-
-    RegisterAction<bit<32>, _, bit<32>>(LVT_pid_10) Update_lvt_pid_10 = {
-    void apply(inout bit<32> value, out bit<32> rv) {
-            if ( hdr.gvt.pid == 10 ) value = hdr.gvt.value;
-            rv = value;
-        }
-    };
-
-    RegisterAction<bit<32>, _, bit<32>>(LVT_pid_11) Update_lvt_pid_11 = {
-    void apply(inout bit<32> value, out bit<32> rv) {
-            if ( hdr.gvt.pid == 11 ) value = hdr.gvt.value;
-            rv = value;
-        }
-    };
-
-    RegisterAction<bit<32>, _, bit<32>>(LVT_pid_12) Update_lvt_pid_12 = {
-    void apply(inout bit<32> value, out bit<32> rv) {
-            if ( hdr.gvt.pid == 12 ) value = hdr.gvt.value;
-            rv = value;
-        }
-    };
-
-    RegisterAction<bit<32>, _, bit<32>>(LVT_pid_13) Update_lvt_pid_13 = {
-    void apply(inout bit<32> value, out bit<32> rv) {
-            if ( hdr.gvt.pid == 13 ) value = hdr.gvt.value;
-            rv = value;
-        }
-    };
-
-    RegisterAction<bit<32>, _, bit<32>>(LVT_pid_14) Update_lvt_pid_14 = {
-    void apply(inout bit<32> value, out bit<32> rv) {
-            if ( hdr.gvt.pid == 14 ) value = hdr.gvt.value;
-            rv = value;
-        }
-    };
     
     RegisterAction<bit<32>, _, bit<32>>(LVT_chunk_0) read_chunk_0 = {
     void apply(inout bit<32> value, out bit<32> rv) {
@@ -278,12 +198,6 @@ control SwitchIngress(
     };
 
 
-    RegisterAction<bit<32>, _, bit<32>>(LVT_chunk_1) read_chunk_1 = {
-    void apply(inout bit<32> value, out bit<32> rv) {
-            rv = value;
-        }
-    };
-
     RegisterAction<bit<32>, _, bit<32>>(LVT_chunk_0) Update_chunk_0 = {
     void apply(inout bit<32> value, out bit<32> rv) {
             value = aux_min;
@@ -291,6 +205,13 @@ control SwitchIngress(
         }
     };
     
+    RegisterAction<bit<32>, _, bit<32>>(LVT_chunk_1) read_chunk_1 = {
+    void apply(inout bit<32> value, out bit<32> rv) {
+            rv = value;
+        }
+    };
+
+
     RegisterAction<bit<32>, _, bit<32>>(LVT_chunk_1) Update_chunk_1 = {
     void apply(inout bit<32> value, out bit<32> rv) {
             value = aux_min;
@@ -298,7 +219,7 @@ control SwitchIngress(
         }
     };
     
-    
+     
     RegisterAction<bit<32>, _, bit<32>>(GVT) Update_GVT = {
     void apply(inout bit<32> value, out bit<32> rv) {
             value = aux_min;
@@ -345,45 +266,32 @@ control SwitchIngress(
 
     apply {
 	if(hdr.gvt.isValid()){
-	        if(hdr.gvt.chunk == 0){
-			ig_md.iterator_0  = Update_lvt_pid_0.execute(0);
-			ig_md.iterator_1  = Update_lvt_pid_1.execute(0);
-			aux_min = min(ig_md.iterator_0, ig_md.iterator_1);
-		        ig_md.iterator_1  = Update_lvt_pid_2.execute(0);
-		        aux_min = min(aux_min, ig_md.iterator_1);
-		        ig_md.iterator_1  = Update_lvt_pid_3.execute(0);
-		        aux_min = min(aux_min, ig_md.iterator_1);
-		        ig_md.iterator_1  = Update_lvt_pid_4.execute(0);
-		        aux_min = min(aux_min, ig_md.iterator_1);
-		        ig_md.iterator_1  = Update_lvt_pid_5.execute(0);  
-		        aux_min = min(aux_min, ig_md.iterator_1); 
-		        ig_md.gvt = Update_chunk_0.execute(0);    
-		        ig_intr_dprsr_md.resubmit_type = 3w1; 
-	        }
-		else if(hdr.gvt.chunk == 1){
-			ig_md.iterator_1  = Update_lvt_pid_6.execute(0);
-			aux_min = min(ig_md.iterator_0, ig_md.iterator_1);
-		        ig_md.iterator_1  = Update_lvt_pid_7.execute(0);
-		        aux_min = min(aux_min, ig_md.iterator_1);
-		        ig_md.iterator_1  = Update_lvt_pid_8.execute(0);
-		        aux_min = min(aux_min, ig_md.iterator_1);
-		        ig_md.iterator_1  = Update_lvt_pid_9.execute(0);
-		        aux_min = min(aux_min, ig_md.iterator_1);
-		        ig_md.iterator_1  = Update_lvt_pid_10.execute(0);  
-		        aux_min = min(aux_min, ig_md.iterator_1);
-		        ig_md.gvt = Update_chunk_0.execute(1);     
-		        ig_intr_dprsr_md.resubmit_type = 3w1;     
-	        }
-		else if(ig_intr_md.resubmit_flag == 1){
-		        ig_md.iterator_1 =read_chunk_0.execute(0);
-			ig_md.iterator_0  = read_chunk_1.execute(0);
-			aux_min = min(ig_md.iterator_0, ig_md.iterator_1);
+		
+		if(ig_intr_md.resubmit_flag == 1){
+		        ig_md.iterator_1 = read_chunk_0.execute(0);
+			ig_md.iterator_0 = read_chunk_1.execute(0);
+			aux_min = min(ig_md.iterator_0, ig_md.iterator_1);	
                 	ig_md.gvt = Update_GVT.execute(0);
 		 	hdr.gvt.value = ig_md.gvt;
                 	hdr.gvt.type = TYPE_DELIVER;
                 	eth_forward.apply();
                 	ig_intr_tm_md.mcast_grp_a =  1;
-		}
+		}else{		
+			//update the proper chunk
+			ig_md.iterator_0  = Update_lvt_pid_0.execute( hdr.gvt.chunk);
+			ig_md.iterator_1  = Update_lvt_pid_1.execute( hdr.gvt.chunk);
+			aux_min = min(ig_md.iterator_0, ig_md.iterator_1);
+			ig_md.iterator_1  = Update_lvt_pid_2.execute( hdr.gvt.chunk);
+			aux_min = min(aux_min, ig_md.iterator_1);
+			ig_md.iterator_1  = Update_lvt_pid_3.execute( hdr.gvt.chunk);
+			aux_min = min(aux_min, ig_md.iterator_1);
+			ig_md.iterator_1  = Update_lvt_pid_4.execute( hdr.gvt.chunk);
+			aux_min = min(aux_min, ig_md.iterator_1);
+			if(hdr.gvt.chunk == 0) ig_md.gvt = Update_chunk_0.execute(0);
+			if(hdr.gvt.chunk == 1) ig_md.gvt = Update_chunk_1.execute(0);      
+			ig_intr_dprsr_md.resubmit_type = 3w1; 
+	        }
+
 	}
         if(hdr.ipv4.isValid()){
             ipv4_lpm.apply();
