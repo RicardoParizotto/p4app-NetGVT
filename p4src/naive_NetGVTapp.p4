@@ -16,10 +16,11 @@
 #include <tna.p4>
 #endif
 
-#include "headers_l2.p4"
-#include "util.p4"
+#include "includes/headers_l2.p4"
+#include "includes/util.p4"
 
 const bit<3> RESUB = 3w1;
+const bit<32> cluster_size = 20;
 
 
 parser TofinoIngressParser(
@@ -270,31 +271,39 @@ control SwitchIngress(
 
     apply {
 	if(hdr.gvt.isValid()){
+					        
+		//update the proper virtual times of a single chunk identified by iterator	
+		ig_md.iterator_0  = Update_lvt_pid_0.execute(ig_md.resub_hdr.iterator);
+		ig_md.resub_hdr.iterator = ig_md.resub_hdr.iterator + 1;
 		
-		if(ig_intr_md.resubmit_flag == 1){
-		        ig_md.iterator_1 = read_chunk_0.execute(0);
-			ig_md.iterator_0 = read_chunk_1.execute(0);
-			aux_min = min(ig_md.iterator_0, ig_md.iterator_1);	
-                	ig_md.gvt = Update_GVT.execute(0);
-		 	hdr.gvt.value = ig_md.gvt;
-                	hdr.gvt.type = TYPE_DELIVER;
-                	eth_forward.apply();
-                	ig_intr_tm_md.mcast_grp_a =  1;
-		}else{		
-			//update the proper chunk
-			ig_md.iterator_0  = Update_lvt_pid_0.execute( hdr.gvt.chunk);
-			ig_md.iterator_1  = Update_lvt_pid_1.execute( hdr.gvt.chunk);
-			aux_min = min(ig_md.iterator_0, ig_md.iterator_1);
-			ig_md.iterator_1  = Update_lvt_pid_2.execute( hdr.gvt.chunk);
-			aux_min = min(aux_min, ig_md.iterator_1);
-			ig_md.iterator_1  = Update_lvt_pid_3.execute( hdr.gvt.chunk);
-			aux_min = min(aux_min, ig_md.iterator_1);
-			ig_md.iterator_1  = Update_lvt_pid_4.execute( hdr.gvt.chunk);
-			aux_min = min(aux_min, ig_md.iterator_1);
-			if(hdr.gvt.chunk == 0) ig_md.gvt = Update_chunk_0.execute(0);
-			if(hdr.gvt.chunk == 1) ig_md.gvt = Update_chunk_1.execute(0);      
-			ig_intr_dprsr_md.resubmit_type = 3w1; 
-	        }
+		if(ig_intr_md.resubmit_flag == 1)	
+	             ig_md.iterator_0 =  min(ig_md.iterator_0, ig_md.resub_hdr.min_value);
+		
+		ig_md.iterator_1  = Update_lvt_pid_1.execute(ig_md.resub_hdr.iterator);
+		ig_md.resub_hdr.iterator = ig_md.resub_hdr.iterator + 1;
+		aux_min = min(ig_md.iterator_0, ig_md.iterator_1);
+		
+		ig_md.iterator_1  = Update_lvt_pid_2.execute(ig_md.resub_hdr.iterator);
+		ig_md.resub_hdr.iterator = ig_md.resub_hdr.iterator + 1;
+		aux_min = min(aux_min, ig_md.iterator_1);
+		
+		ig_md.iterator_1  = Update_lvt_pid_3.execute(ig_md.resub_hdr.iterator);
+		ig_md.resub_hdr.iterator = ig_md.resub_hdr.iterator + 1;		
+		aux_min = min(aux_min, ig_md.iterator_1);
+		
+		ig_md.iterator_1  = Update_lvt_pid_4.execute(ig_md.resub_hdr.iterator);
+		ig_md.resub_hdr.iterator = ig_md.resub_hdr.iterator + 1;		
+		aux_min = min(aux_min, ig_md.iterator_1);   
+		
+	        ig_md.gvt = Update_GVT.execute(0);
+	        ig_md.resub_hdr.min = ig_md.gvt;
+	        
+		if(ig_md.resub_hdr.iterator == cluster_size){
+	 	      hdr.gvt.value = ig_md.gvt;
+        	      hdr.gvt.type = TYPE_DELIVER;
+        	      eth_forward.apply();
+        	      ig_intr_tm_md.mcast_grp_a =  1;	
+		}else{ig_intr_dprsr_md.resubmit_type = 3w1;} //resubmit for other iterations
 
 	}
         if(hdr.ipv4.isValid()){
