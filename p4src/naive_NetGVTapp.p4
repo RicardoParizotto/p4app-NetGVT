@@ -16,8 +16,8 @@
 #include <tna.p4>
 #endif
 
-#include "includes/headers_l2.p4"
-#include "includes/util.p4"
+#include "headers_l2.p4"
+#include "util.p4"
 
 const bit<3> RESUB = 3w1;
 
@@ -94,6 +94,10 @@ parser SwitchIngressParser(
 
 Register<bit<32>, _>(1) LVT_chunk_0;
 Register<bit<32>, _>(1) LVT_chunk_1;
+Register<bit<32>, _>(1) LVT_chunk_2;
+Register<bit<32>, _>(1) LVT_chunk_3;
+Register<bit<32>, _>(1) LVT_chunk_4;
+Register<bit<32>, _>(1) LVT_chunk_5;
 
 
 
