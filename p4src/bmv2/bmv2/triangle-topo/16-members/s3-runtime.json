@@ -1,0 +1,101 @@
+{
+  "target": "bmv2",
+  "p4info": "build/basic.p4.p4info.txt",
+  "bmv2_json": "build/basic.json",
+  "table_entries": [
+    {
+      "table": "MyIngress.set_primary",
+      "match": {
+        "meta.iterator": 16
+      },
+      "action_name": "MyIngress.answer_replica",
+      "action_params": {
+        "port": 4
+      }
+    }
+  ],
+  "multicast_group_entries" : [
+    {
+      "multicast_group_id" : 1,
+      "replicas" : [
+        {
+          "egress_port" : 1,
+          "instance" : 1
+        },
+        {
+          "egress_port" : 2,
+          "instance" : 1
+        },
+	{
+          "egress_port" : 3,
+          "instance" : 1
+        },
+	{
+          "egress_port" : 6,
+          "instance" : 1
+        },
+	{
+          "egress_port" : 7,
+          "instance" : 1
+        },
+	{
+          "egress_port" : 8,
+          "instance" : 1
+        },
+	{
+          "egress_port" : 9,
+          "instance" : 1
+        },
+	{
+          "egress_port" : 10,
+          "instance" : 1
+        },
+        {
+          "egress_port" : 11,
+          "instance" : 1
+        },
+        {
+          "egress_port" : 12,
+          "instance" : 1
+        },
+	{
+          "egress_port" : 13,
+          "instance" : 1
+        },
+	{
+          "egress_port" : 14,
+          "instance" : 1
+        },
+	{
+          "egress_port" : 15,
+          "instance" : 1
+        },
+	{
+          "egress_port" : 16,
+          "instance" : 1
+        },
+	{
+          "egress_port" : 17,
+          "instance" : 1
+        },
+	{
+          "egress_port" : 18,
+          "instance" : 1
+        }
+      ]
+    },
+    {
+    "multicast_group_id" : 2,
+      "replicas" : [
+        {
+          "egress_port" : 4,
+          "instance" : 1
+        },
+        {
+          "egress_port" : 5,
+          "instance" : 1
+        }
+      ]
+    }
+  ]
+}

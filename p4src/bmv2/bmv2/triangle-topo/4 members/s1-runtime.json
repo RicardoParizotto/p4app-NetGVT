@@ -1,0 +1,93 @@
+{
+  "target": "bmv2",
+  "p4info": "build/basic.p4.p4info.txt",
+  "bmv2_json": "build/basic.json",
+  "table_entries": [
+    {
+      "table": "MyIngress.set_destination",
+      "match": {
+        "hdr.gvt.pid": 0
+      },
+      "action_name": "MyIngress.send_message",
+      "action_params": {
+        "port": 1
+       }
+     },
+    {
+      "table": "MyIngress.set_destination",
+      "match": {
+        "hdr.gvt.pid": 1
+      },
+      "action_name": "MyIngress.send_message",
+      "action_params": {
+        "port": 2
+      }
+    },
+    {
+      "table": "MyIngress.set_destination",
+      "match": {
+        "hdr.gvt.pid": 2
+      },
+      "action_name": "MyIngress.send_message",
+      "action_params": {
+        "port": 3
+      }
+     },
+    {
+      "table": "MyIngress.set_destination",
+      "match": {
+        "hdr.gvt.pid": 3
+      },
+      "action_name": "MyIngress.send_message",
+      "action_params": {
+        "port": 6
+      }
+    },
+    {
+      "table": "MyIngress.this_switch",
+      "match": {
+        "hdr.gvt.sid": 0
+      },
+      "action_name": "MyIngress.set_id",
+      "action_params": {
+	"switch_id": 1
+      }
+    }
+  ],
+  "multicast_group_entries" : [
+    {
+      "multicast_group_id" : 1,
+      "replicas" : [
+        {
+          "egress_port" : 1,
+          "instance" : 1
+        },
+        {
+          "egress_port" : 2,
+          "instance" : 1
+        },
+	{
+          "egress_port" : 3,
+          "instance" : 1
+        },
+	{
+          "egress_port" : 6,
+          "instance" : 1
+        }
+      ]
+    },
+    {
+    "multicast_group_id" : 2,
+      "replicas" : [
+        {
+          "egress_port" : 4,
+          "instance" : 1
+        },
+        {
+          "egress_port" : 5,
+          "instance" : 1
+        }
+      ]
+    }
+  ]
+}
