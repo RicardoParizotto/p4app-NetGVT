@@ -62,10 +62,6 @@ def receive(iface):
 def send(iface, end):
     global start_ppkt
     global gvt
-
-    src_addr = socket.gethostbyname(sys.argv[1])
-    dst_addr = socket.gethostbyname('10.50.0.100')
-
     
     lvt = 0
     end_simulation_loop = int(sys.argv[3])
@@ -110,8 +106,8 @@ if __name__ == '__main__':
     pid = args.pid
     iface = args.iface
 
-    new_rec_thread = Thread(target=receive, args=(iface, args.size,))
+    new_rec_thread = Thread(target=receive, args=(iface,))
     new_rec_thread.start()
 
-    new_send_thread = Thread(target=send, args=(iface,))
+    new_send_thread = Thread(target=send, args=(iface, args.size,))
     new_send_thread.start()
