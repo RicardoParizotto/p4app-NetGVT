@@ -109,9 +109,6 @@ parser.add_argument('iface', type=str,
 
 
 if __name__ == '__main__':
-    if len(sys.argv)<4:
-        print('pass 2 arguments: <source> <pid> <size>')
-        exit(1)
 
     args = parser.parse_args()
 
