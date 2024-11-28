@@ -59,12 +59,12 @@ def receive(iface):
     sniff(iface = iface, lfilter = build_lfilter,
           prn = lambda x: handle_pkt(x))
 
-def send(iface, end):
+def send(iface, end_time):
     global start_ppkt
     global gvt
     
     lvt = 0
-    end_simulation_loop = int(sys.argv[3])
+    end_simulation_loop = end_time
     start = time.time()
     while lvt < end_simulation_loop:
         if lvt <= gvt:
