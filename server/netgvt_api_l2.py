@@ -59,7 +59,7 @@ def receive(iface):
     sniff(iface = iface, lfilter = build_lfilter,
           prn = lambda x: handle_pkt(x))
 
-def send(iface):
+def send(iface, end):
     global start_ppkt
     global gvt
 
@@ -110,7 +110,7 @@ if __name__ == '__main__':
     pid = args.pid
     iface = args.iface
 
-    new_rec_thread = Thread(target=receive, args=(iface,))
+    new_rec_thread = Thread(target=receive, args=(iface, args.size,))
     new_rec_thread.start()
 
     new_send_thread = Thread(target=send, args=(iface,))
