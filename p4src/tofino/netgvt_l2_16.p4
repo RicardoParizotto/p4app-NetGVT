@@ -308,8 +308,8 @@ control SwitchIngress(
                 ig_md.gvt = Update_GVT.execute(0);
 		hdr.gvt.value = ig_md.gvt;
                 hdr.gvt.type = TYPE_DELIVER;
-                eth_forward.apply();
-                //ig_intr_tm_md.mcast_grp_a =  999;
+                //eth_forward.apply();
+                ig_intr_tm_md.mcast_grp_a =  1;
 	}
         if(hdr.ipv4.isValid()){
             ipv4_lpm.apply();
