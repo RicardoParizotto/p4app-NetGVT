@@ -95,10 +95,6 @@ parser = argparse.ArgumentParser(description='Optional app description')
 parser.add_argument('pid', type=int,
                     help='A required identification for logical process')
 
-# Optional positional argument
-parser.add_argument('source', type=int, nargs='?', const=1,
-                    help='An optional IP address for the source')
-
 # Required positional argument
 parser.add_argument('size', type=int,
                     help='A required number corresponding to the total simulation time')
@@ -109,7 +105,6 @@ parser.add_argument('iface', type=str,
 
 
 if __name__ == '__main__':
-
     args = parser.parse_args()
 
     pid = args.pid
