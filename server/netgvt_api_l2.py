@@ -13,6 +13,7 @@ from scapy.all import Ether, IP, UDP, TCP
 from gvt_header_l2 import GvtProtocol
 
 import threading
+from threading import Thread
 
 from scapy.all import sniff
 
