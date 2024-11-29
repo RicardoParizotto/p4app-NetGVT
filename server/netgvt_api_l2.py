@@ -24,19 +24,26 @@ import argparse,sys,time,os
 ETHERTYPE_GVT = 0x8666
 TYPE_PROPOSAL = 1
 TYPE_DELIVER = 0
-
+ASYNCHRONOUS = 10
+SYNCHRONOUS = 5
 
 gvt = 0
 
 start_ppkt = 0
 pid = 0
 lat = np.array([])
+lvt = 0
+mode = ASYNCHRONOUS
+
+
+lock = threading.Lock()
 
 
 def handle_pkt(pkt):
         global lat
         global start_ppkt
         global gvt
+        global lvt
 
         sys.stdout.flush()
 #       pkt.show2()
@@ -44,13 +51,14 @@ def handle_pkt(pkt):
 
         end = time.time()
         print(end - start_ppkt)
-        gvt = pkt[GvtProtocol].value
+        gvt = pkt[GvtProtocol].gvt
         sys.stdout.flush()
-        	#print end
-#        	lat = np.append(lat, 1000*(end-start))
-#       	print end-start
-#            else:
-##                start = time.time()
+        lock.acquire()
+        if lvt > pkt[GvtProtocol].value:
+            print("rollback")
+            lvt = gvt
+        lock.release()
+             
 
 def receive(iface):
     #print "sniffing on %s" % iface
@@ -62,19 +70,23 @@ def receive(iface):
 def send(iface, end_time):
     global start_ppkt
     global gvt
+    global lvt
+    global mode
     
-    lvt = 0
+
     end_simulation_loop = end_time
     start = time.time()
     while lvt < end_simulation_loop:
-        if lvt <= gvt:
+        lock.acquire()
+        if mode==ASYNCHRONOUS or lvt <= gvt:
             lvt = lvt + 1
             #print "sending on interface %s to %s" % (iface, str(src_addr))
             pkt =  Ether(src=get_if_hwaddr(iface), dst='ff:ff:ff:ff:ff:ff', type = ETHERTYPE_GVT)
-            pkt = pkt / GvtProtocol(type=TYPE_PROPOSAL, value=lvt, pid=pid)
+            pkt = pkt / GvtProtocol(type=TYPE_PROPOSAL, value=lvt, pid=pid, gvt=0)
             #pkt.show2()
             start_ppkt = time.time()   
             sendp(pkt, iface=iface, verbose=False)
+        lock.release()
 
     end = time.time()
 #   lat = np.append(lat, 1000*(end-start))
@@ -101,6 +113,7 @@ parser.add_argument('iface', type=str,
 
 
 if __name__ == '__main__':
+
     args = parser.parse_args()
 
     pid = args.pid
