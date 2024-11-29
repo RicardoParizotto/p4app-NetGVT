@@ -45,6 +45,7 @@ def handle_pkt(pkt):
         global start_ppkt
         global gvt
         global lvt
+        global lock
 
         sys.stdout.flush()
 #       pkt.show2()
@@ -73,6 +74,7 @@ def send(iface, end_time):
     global gvt
     global lvt
     global mode
+    global lock
     
 
     end_simulation_loop = end_time
