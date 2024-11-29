@@ -84,7 +84,7 @@ def send(iface, end_time):
     end_simulation_loop = end_time
     start = time.time()
     while lvt < end_simulation_loop:
-        #time.sleep(0.5) 
+        time.sleep(0.1) 
         lock.acquire()
         if mode==ASYNCHRONOUS or lvt <= gvt:
             lvt = lvt + 1
@@ -120,11 +120,19 @@ parser.add_argument('size', type=int,
 parser.add_argument('iface', type=str,
                     help='A required string corresponding to the interface')
 
+# Required positional argument
+parser.add_argument('mode', type=str,
+                    help='A required string corresponding to the interface')
+
 
 if __name__ == '__main__':
 
     args = parser.parse_args()
 
+    global mode
+ 
+    mode = args.mod
+  
     pid = args.pid
     iface = args.iface
 
