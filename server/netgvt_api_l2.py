@@ -120,10 +120,6 @@ parser.add_argument('size', type=int,
 parser.add_argument('iface', type=str,
                     help='A required string corresponding to the interface')
 
-# Required positional argument
-parser.add_argument('mode', type=int,
-                    help='A required string corresponding to the interface')
-
 
 if __name__ == '__main__':
 
