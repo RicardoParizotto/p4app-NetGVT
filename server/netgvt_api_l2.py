@@ -55,6 +55,10 @@ def handle_pkt(pkt):
         print(end - start_ppkt)
         gvt = pkt[GvtProtocol].gvt
         sys.stdout.flush()
+        
+        
+        print(lvt)
+        print(pkt[GvtProtocol].value)
         lock.acquire()
         if lvt > pkt[GvtProtocol].value:
             print("rollback")
@@ -80,7 +84,7 @@ def send(iface, end_time):
     end_simulation_loop = end_time
     start = time.time()
     while lvt < end_simulation_loop:
-        time.sleep(0.5) 
+        #time.sleep(0.5) 
         lock.acquire()
         if mode==ASYNCHRONOUS or lvt <= gvt:
             lvt = lvt + 1
