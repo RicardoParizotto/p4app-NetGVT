@@ -128,10 +128,6 @@ parser.add_argument('mode', type=int,
 if __name__ == '__main__':
 
     args = parser.parse_args()
-
-    global mode
- 
-    mode = args.mod
   
     pid = args.pid
     iface = args.iface
