@@ -121,7 +121,7 @@ parser.add_argument('iface', type=str,
                     help='A required string corresponding to the interface')
 
 # Required positional argument
-parser.add_argument('mode', type=str,
+parser.add_argument('mode', type=int,
                     help='A required string corresponding to the interface')
 
 
