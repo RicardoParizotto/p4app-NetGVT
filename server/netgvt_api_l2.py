@@ -85,6 +85,7 @@ def send(iface, end_time):
             pkt =  Ether(src=get_if_hwaddr(iface), dst='ff:ff:ff:ff:ff:ff', type = ETHERTYPE_GVT)
             pkt = pkt / GvtProtocol(type=TYPE_PROPOSAL, value=lvt, pid=pid, gvt=0)
             #pkt.show2()
+            print(lvt)
             start_ppkt = time.time()   
             sendp(pkt, iface=iface, verbose=False)
         lock.release()
