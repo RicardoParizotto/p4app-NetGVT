@@ -305,6 +305,8 @@ control SwitchIngress(
                 aux_min = min(aux_min, ig_md.iterator_1);
                 ig_md.iterator_1  = Update_lvt_pid_6.execute(0);
                 aux_min = min(aux_min, ig_md.iterator_1);
+                ig_md.iterator_1  = Update_lvt_pid_7.execute(0);
+                aux_min = min(aux_min, ig_md.iterator_1);
                 ig_md.gvt = Update_GVT.execute(0);
 		hdr.gvt.gvt = ig_md.gvt;
                 hdr.gvt.type = TYPE_DELIVER;

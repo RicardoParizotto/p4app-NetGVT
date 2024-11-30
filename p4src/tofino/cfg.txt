@@ -1,0 +1,21 @@
+
+bfrt.netgvt_l2_16.pipe.LVT_pid_0.add(0, 0)
+bfrt.netgvt_l2_16.pipe.LVT_pid_1.add(0, 0)
+bfrt.netgvt_l2_16.pipe.LVT_pid_2.add(0, 1000000)
+bfrt.netgvt_l2_16.pipe.LVT_pid_3.add(0, 1000000)
+bfrt.netgvt_l2_16.pipe.LVT_pid_4.add(0, 1000000)
+bfrt.netgvt_l2_16.pipe.LVT_pid_5.add(0, 1000000)
+bfrt.netgvt_l2_16.pipe.LVT_pid_6.add(0, 1000000)
+
+
+#Setup multicast group
+multicast_grp = 1 #Match your p4
+entry = bfrt.pre.node.entry(MULTICAST_NODE_ID = 1,MULTICAST_RID = 1,DEV_PORT = [164,132,172,140]).push() #List the ports your want to MC to
+entry = bfrt.pre.mgid.entry(MGID = multicast_grp, MULTICAST_NODE_ID = [1,], MULTICAST_NODE_L1_XID_VALID = [False,],MULTICAST_NODE_L1_XID = [0, ]).push()
+
+
+table1 = bfrt.netgvt_l2_16.pipe.SwitchIngress.ipv4_lpm
+entry = table1.add_with_ipv4_forward("10.0.1.1", 132, "94:6d:ae:5c:87:72")
+
+entry = table1.add_with_ipv4_forward("10.0.1.2", 164 , "94:6d:ae:5c:87:42")
+
