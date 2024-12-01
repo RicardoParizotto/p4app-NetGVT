@@ -117,12 +117,12 @@ void send_packets(const char *src_ip, int end_simulation_loop) {
             std::cout << "  Ethertype: 0x" << std::hex << ntohs(eth_hdr->ether_type) << std::dec << std::endl;
 
             // Verificar se é nosso protocolo (ETHERTYPE_GVT = 0x8666)
-            if (ntohs(eth_hdr->ether_type) == 0x8666) {
+            if (eth_hdr->ether_type == 0x8666) {
                 const GvtProtocol *gvt_hdr = (GvtProtocol *)(packet + sizeof(struct ether_header));
                 std::cout << "GVT Protocol Header:" << std::endl;
                 std::cout << "  Type: " << (int)gvt_hdr->type << std::endl;
-                std::cout << "  Value: " << ntohl(gvt_hdr->value) << std::endl;
-                std::cout << "  PID: " << ntohl(gvt_hdr->pid) << std::endl;
+                std::cout << "  Value: " << (gvt_hdr->value) << std::endl;
+                std::cout << "  PID: " << (gvt_hdr->pid) << std::endl;
             } else {
                 std::cout << "Packet is not GVT Protocol." << std::endl;
             }
