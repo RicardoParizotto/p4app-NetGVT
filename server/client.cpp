@@ -48,7 +48,7 @@ void handle_pkt(const struct pcap_pkthdr *header, const uint8_t *packet) {
 
 void receive_packets() {
     char errbuf[PCAP_ERRBUF_SIZE];
-    pcap_t *handle = pcap_open_live("enp1s0np1", BUFSIZ, 1, 1000, errbuf);
+    pcap_t *handle = pcap_open_live("enp132s0f0np0", BUFSIZ, 1, 1000, errbuf);
 
     if (!handle) {
         std::cerr << "Error opening device: " << errbuf << std::endl;
@@ -76,7 +76,7 @@ void receive_packets() {
 
 void send_packets(const char *src_ip, int end_simulation_loop) {
     char errbuf[PCAP_ERRBUF_SIZE];
-    pcap_t *handle = pcap_open_live("enp1s0np1", BUFSIZ, 1, 1000, errbuf);
+    pcap_t *handle = pcap_open_live("enp132s0f0np0", BUFSIZ, 1, 1000, errbuf);
 
     if (!handle) {
         std::cerr << "Error opening device: " << errbuf << std::endl;
@@ -87,6 +87,9 @@ void send_packets(const char *src_ip, int end_simulation_loop) {
     memset(&eth_hdr, 0, sizeof(eth_hdr));
     eth_hdr.ether_type = htons(ETHERTYPE_GVT);
     memset(eth_hdr.ether_dhost, 0xFF, sizeof(eth_hdr.ether_dhost));
+
+    uint8_t manual_mac[6] = {0x94, 0x6d, 0xae, 0x5c, 0x87, 0x72};
+    std::memcpy(eth_hdr->ether_shost, manual_mac, 6); // Define MAC de origem
 
     uint32_t lvt = 0;
     auto start = std::chrono::high_resolution_clock::now();
