@@ -18,6 +18,7 @@ struct GvtProtocol {
     uint32_t value;
     uint32_t pid;
     uint32_t gvt;
+    uint32_t iterator;
 } __attribute__((packed));
 
 int gvt = 0;
@@ -85,7 +86,7 @@ void send_packets(const char *src_ip, int end_simulation_loop) {
 
     struct ether_header eth_hdr;
     memset(&eth_hdr, 0, sizeof(eth_hdr));
-    eth_hdr.ether_type = ETHERTYPE_GVT;
+    eth_hdr.ether_type = htons(ETHERTYPE_GVT);
     memset(eth_hdr.ether_dhost, 0xFF, sizeof(eth_hdr.ether_dhost));
 
     uint8_t manual_mac[6] = {0x94, 0x6d, 0xae, 0x5c, 0x87, 0x72};
@@ -98,7 +99,7 @@ void send_packets(const char *src_ip, int end_simulation_loop) {
         if (lvt <= gvt) {
             lvt++;
 
-            GvtProtocol gvt_hdr = {TYPE_PROPOSAL, lvt, pid, gvt};
+            GvtProtocol gvt_hdr = {htonl(TYPE_PROPOSAL), htonl(lvt), htonl(pid), htonl(gvt),  htonl(iterator)};
 
             uint8_t packet[sizeof(ether_header) + sizeof(GvtProtocol)];
             memcpy(packet, &eth_hdr, sizeof(ether_header));
@@ -117,12 +118,14 @@ void send_packets(const char *src_ip, int end_simulation_loop) {
             std::cout << "  Ethertype: 0x" << std::hex << ntohs(eth_hdr->ether_type) << std::dec << std::endl;
 
             // Verificar se é nosso protocolo (ETHERTYPE_GVT = 0x8666)
-            if (eth_hdr->ether_type == 0x8666) {
+            if (ntohs(eth_hdr->ether_type) == 0x8666) {
                 const GvtProtocol *gvt_hdr = (GvtProtocol *)(packet + sizeof(struct ether_header));
                 std::cout << "GVT Protocol Header:" << std::endl;
-                std::cout << "  Type: " << (int)gvt_hdr->type << std::endl;
-                std::cout << "  Value: " << (gvt_hdr->value) << std::endl;
-                std::cout << "  PID: " << (gvt_hdr->pid) << std::endl;
+                std::cout << "  Type: " << (ntohl)gvt_hdr->type << std::endl;
+                std::cout << "  Value: " << ntohl(gvt_hdr->value) << std::endl;
+                std::cout << "  PID: " << ntohl(gvt_hdr->pid) << std::endl;
+                std::cout << "  GVT: " << ntohl(gvt_hdr->gvt) << std::endl;
+                std::cout << "  Recirc: " << ntohl(gvt_hdr->iterator) << std::endl;
             } else {
                 std::cout << "Packet is not GVT Protocol." << std::endl;
             }
