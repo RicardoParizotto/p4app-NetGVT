@@ -14,7 +14,7 @@
 #define TYPE_DELIVER  0
 
 struct GvtProtocol {
-    uint8_t type;
+    uint32_t type;
     uint32_t value;
     uint32_t pid;
     uint32_t gvt;
