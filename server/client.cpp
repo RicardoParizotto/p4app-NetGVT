@@ -89,7 +89,7 @@ void send_packets(const char *src_ip, int end_simulation_loop) {
     memset(eth_hdr.ether_dhost, 0xFF, sizeof(eth_hdr.ether_dhost));
 
     uint8_t manual_mac[6] = {0x94, 0x6d, 0xae, 0x5c, 0x87, 0x72};
-    std::memcpy(eth_hdr->ether_shost, manual_mac, 6); // Define MAC de origem
+    std::memcpy(eth_hdr.ether_shost, manual_mac, 6); // Define MAC de origem
 
     uint32_t lvt = 0;
     auto start = std::chrono::high_resolution_clock::now();
