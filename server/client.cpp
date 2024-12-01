@@ -98,10 +98,10 @@ void send_packets(const char *src_ip, int end_simulation_loop) {
     auto start = std::chrono::high_resolution_clock::now();
 
     while (lvt < end_simulation_loop) {
-        std::cout << "iter" << std::endl;
+
         if (lvt <= gvt) {
             lvt++;
-
+            std::cout << "iter" << std::endl;
             GvtProtocol gvt_hdr = {htonl(TYPE_PROPOSAL), htonl(lvt), htonl(pid), htonl(gvt),  htonl(0)};
 
             uint8_t packet[sizeof(ether_header) + sizeof(GvtProtocol)];
