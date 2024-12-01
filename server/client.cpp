@@ -99,7 +99,7 @@ void send_packets(const char *src_ip, int end_simulation_loop) {
         if (lvt <= gvt) {
             lvt++;
 
-            GvtProtocol gvt_hdr = {htonl(TYPE_PROPOSAL), htonl(lvt), htonl(pid), htonl(gvt),  htonl(iterator)};
+            GvtProtocol gvt_hdr = {htonl(TYPE_PROPOSAL), htonl(lvt), htonl(pid), htonl(gvt),  htonl(0)};
 
             uint8_t packet[sizeof(ether_header) + sizeof(GvtProtocol)];
             memcpy(packet, &eth_hdr, sizeof(ether_header));
@@ -121,7 +121,7 @@ void send_packets(const char *src_ip, int end_simulation_loop) {
             if (ntohs(eth_hdr->ether_type) == 0x8666) {
                 const GvtProtocol *gvt_hdr = (GvtProtocol *)(packet + sizeof(struct ether_header));
                 std::cout << "GVT Protocol Header:" << std::endl;
-                std::cout << "  Type: " << (ntohl)gvt_hdr->type << std::endl;
+                std::cout << "  Type: " << ntohl(gvt_hdr->type) << std::endl;
                 std::cout << "  Value: " << ntohl(gvt_hdr->value) << std::endl;
                 std::cout << "  PID: " << ntohl(gvt_hdr->pid) << std::endl;
                 std::cout << "  GVT: " << ntohl(gvt_hdr->gvt) << std::endl;
