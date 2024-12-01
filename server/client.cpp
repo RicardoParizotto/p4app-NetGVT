@@ -43,6 +43,8 @@ void handle_pkt(const struct pcap_pkthdr *header, const uint8_t *packet) {
     const GvtProtocol *gvt_header = reinterpret_cast<const GvtProtocol *>(packet + 14);
     gvt = ntohl(gvt_header->gvt);
 
+    std::cout << "GVT: " << ntohl(gvt_header->gvt);
+ 
     std::cout << "Latency: " << end_time - start_ppkt << " seconds" << std::endl;
     latencies.push_back(1000 * (end_time - start_ppkt)); // Store latency in milliseconds
 }
@@ -96,6 +98,7 @@ void send_packets(const char *src_ip, int end_simulation_loop) {
     auto start = std::chrono::high_resolution_clock::now();
 
     while (lvt < end_simulation_loop) {
+        std::cout << "iter" << std::endl;
         if (lvt <= gvt) {
             lvt++;
 
