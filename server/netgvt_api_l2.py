@@ -90,7 +90,7 @@ def send(iface, end_time):
             lvt = lvt + 1
             #print "sending on interface %s to %s" % (iface, str(src_addr))
             pkt =  Ether(src=get_if_hwaddr(iface), dst='ff:ff:ff:ff:ff:ff', type = ETHERTYPE_GVT)
-            pkt = pkt / GvtProtocol(type=TYPE_PROPOSAL, value=lvt, pid=pid, gvt=0)
+            pkt = pkt / GvtProtocol(type=TYPE_PROPOSAL, value=lvt, pid=pid, gvt=0, rec_control=0)
             #pkt.show2()
             #print(lvt)
             start_ppkt = time.time()   

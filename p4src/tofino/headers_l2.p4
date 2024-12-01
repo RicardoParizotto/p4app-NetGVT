@@ -156,6 +156,7 @@ header gvt_h {
     bit<32> pid;
     bit<32> value;
     bit<32> gvt;
+    bit<32> iterator;
 }
 
 //this one is for resubmitions

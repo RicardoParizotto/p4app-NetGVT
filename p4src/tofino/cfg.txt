@@ -1,16 +1,17 @@
 
 bfrt.netgvt_l2_16.pipe.LVT_pid_0.add(0, 0)
 bfrt.netgvt_l2_16.pipe.LVT_pid_1.add(0, 0)
-bfrt.netgvt_l2_16.pipe.LVT_pid_2.add(0, 1000000)
-bfrt.netgvt_l2_16.pipe.LVT_pid_3.add(0, 1000000)
-bfrt.netgvt_l2_16.pipe.LVT_pid_4.add(0, 1000000)
-bfrt.netgvt_l2_16.pipe.LVT_pid_5.add(0, 1000000)
-bfrt.netgvt_l2_16.pipe.LVT_pid_6.add(0, 1000000)
+bfrt.netgvt_l2_16.pipe.LVT_pid_2.add(0, 10000)
+bfrt.netgvt_l2_16.pipe.LVT_pid_3.add(0, 10000)
+bfrt.netgvt_l2_16.pipe.LVT_pid_4.add(0, 10000)
+bfrt.netgvt_l2_16.pipe.LVT_pid_5.add(0, 10000)
+bfrt.netgvt_l2_16.pipe.LVT_pid_6.add(0, 10000)
+bfrt.netgvt_l2_16.pipe.LVT_pid_7.add(0, 10000)
 
 
 #Setup multicast group
 multicast_grp = 1 #Match your p4
-entry = bfrt.pre.node.entry(MULTICAST_NODE_ID = 1,MULTICAST_RID = 1,DEV_PORT = [164,132,172,140]).push() #List the ports your want to MC to
+entry = bfrt.pre.node.entry(MULTICAST_NODE_ID = 1,MULTICAST_RID = 1,DEV_PORT = [164,132,172,140,148,156,180, 188]).push() #List the ports your want to MC to
 entry = bfrt.pre.mgid.entry(MGID = multicast_grp, MULTICAST_NODE_ID = [1,], MULTICAST_NODE_L1_XID_VALID = [False,],MULTICAST_NODE_L1_XID = [0, ]).push()
 
 
