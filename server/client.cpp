@@ -107,6 +107,23 @@ void send_packets(const char *src_ip, int end_simulation_loop) {
 
             print_packet(packet, sizeof(packet));
 
+            const struct ether_header *eth_hdr = (struct ether_header *)packet;
+            std::cout << "Ethernet Header:" << std::endl;
+            std::cout << "  Source MAC: " << ether_ntoa((struct ether_addr *)eth_hdr->ether_shost) << std::endl;
+            std::cout << "  Destination MAC: " << ether_ntoa((struct ether_addr *)eth_hdr->ether_dhost) << std::endl;
+            std::cout << "  Ethertype: 0x" << std::hex << ntohs(eth_hdr->ether_type) << std::dec << std::endl;
+
+            // Verificar se é nosso protocolo (ETHERTYPE_GVT = 0x8666)
+            if (ntohs(eth_hdr->ether_type) == 0x8666) {
+                const GvtProtocol *gvt_hdr = (GvtProtocol *)(packet + sizeof(struct ether_header));
+                std::cout << "GVT Protocol Header:" << std::endl;
+                std::cout << "  Type: " << (int)gvt_hdr->type << std::endl;
+                std::cout << "  Value: " << ntohl(gvt_hdr->value) << std::endl;
+                std::cout << "  PID: " << ntohl(gvt_hdr->pid) << std::endl;
+            } else {
+                std::cout << "Packet is not GVT Protocol." << std::endl;
+            }
+
             if (pcap_sendpacket(handle, packet, sizeof(packet)) != 0) {
                 std::cerr << "Error sending packet: " << pcap_geterr(handle) << std::endl;
             }
