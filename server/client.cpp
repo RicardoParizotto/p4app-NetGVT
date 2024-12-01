@@ -7,6 +7,7 @@
 #include <pcap.h>
 #include <arpa/inet.h>
 #include <netinet/ether.h>
+#include <iomanip>
 
 #define ETHERTYPE_GVT 0x8666
 #define TYPE_PROPOSAL 1
@@ -23,6 +24,15 @@ int gvt = 0;
 double start_ppkt = 0;
 int pid = 0;
 std::vector<double> latencies;
+
+void print_packet(const uint8_t *packet, size_t length) {
+    std::cout << "Packet content (" << length << " bytes): ";
+    for (size_t i = 0; i < length; ++i) {
+        if (i % 16 == 0) std::cout << "\n";
+        std::cout << std::setw(2) << std::setfill('0') << std::hex << (int)packet[i] << " ";
+    }
+    std::cout << std::dec << "\n"; // Resetando para decimal
+}
 
 void handle_pkt(const struct pcap_pkthdr *header, const uint8_t *packet) {
     auto end = std::chrono::high_resolution_clock::now();
@@ -94,6 +104,8 @@ void send_packets(const char *src_ip, int end_simulation_loop) {
             start_ppkt = std::chrono::duration<double>(
                              std::chrono::high_resolution_clock::now().time_since_epoch())
                              .count();
+
+            print_packet(packet, sizeof(packet));
 
             if (pcap_sendpacket(handle, packet, sizeof(packet)) != 0) {
                 std::cerr << "Error sending packet: " << pcap_geterr(handle) << std::endl;
