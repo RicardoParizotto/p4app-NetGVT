@@ -70,6 +70,7 @@ parser SwitchIngressParser(
 }
 
 
+Register<bit<32>, _>(1) debug;
 
 Register<bit<32>, _>(1) LVT_pid_0;
 Register<bit<32>, _>(1) LVT_pid_1;
@@ -127,7 +128,14 @@ control SwitchIngress(
 
 
     bit<32> aux_min;
- 
+
+
+    RegisterAction<bit<32>, _, bit<32>>(debug) debug_ex = {
+    void apply(inout bit<32> value, out bit<32> rv) {
+            value = hdr.gvt.value;
+            rv = value;
+        }
+    }; 
 
     RegisterAction<bit<32>, _, bit<32>>(LVT_pid_0) Update_lvt_pid_0 = {
     void apply(inout bit<32> value, out bit<32> rv) {
@@ -308,6 +316,7 @@ control SwitchIngress(
                 ig_md.iterator_1  = Update_lvt_pid_7.execute(0);
                 aux_min = min(aux_min, ig_md.iterator_1);
                 ig_md.gvt = Update_GVT.execute(0);
+                debug_ex.execute(0);
 		hdr.gvt.gvt = ig_md.gvt;
                 hdr.gvt.type = TYPE_DELIVER;
                 //eth_forward.apply();
