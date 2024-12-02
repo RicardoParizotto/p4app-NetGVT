@@ -137,7 +137,7 @@ control SwitchIngress(
         }
     }; 
 
-    RegisterAction<bit<16>, _, bit<16>>(debug) debug_ex = {
+    RegisterAction<bit<16>, _, bit<16>>(debug2) debug_ex2 = {
     void apply(inout bit<16> value, out bit<16> rv) {
             value = hdr.ethernet.ether_type;
             rv = value;
