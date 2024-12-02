@@ -132,7 +132,7 @@ control SwitchIngress(
 
     RegisterAction<bit<32>, _, bit<32>>(debug) debug_ex = {
     void apply(inout bit<32> value, out bit<32> rv) {
-            value = value + 1
+            value = value + 1;
             rv = value;
         }
     }; 
