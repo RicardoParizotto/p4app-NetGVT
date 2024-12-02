@@ -69,7 +69,7 @@ parser SwitchIngressParser(
     }
 }
 
-
+Register<bit<16>, _>(1) debug2;
 Register<bit<32>, _>(1) debug;
 
 Register<bit<32>, _>(1) LVT_pid_0;
@@ -132,7 +132,14 @@ control SwitchIngress(
 
     RegisterAction<bit<32>, _, bit<32>>(debug) debug_ex = {
     void apply(inout bit<32> value, out bit<32> rv) {
-            value = hdr.gvt.value;
+            value = value + 1
+            rv = value;
+        }
+    }; 
+
+    RegisterAction<bit<16>, _, bit<16>>(debug) debug_ex = {
+    void apply(inout bit<16> value, out bit<16> rv) {
+            value = hdr.ethernet.ether_type;
             rv = value;
         }
     }; 
@@ -299,6 +306,7 @@ control SwitchIngress(
     }
 
     apply {
+        debug_2.execute(0);
 	if(hdr.gvt.isValid()){
 		ig_md.iterator_0  = Update_lvt_pid_0.execute(0);
 		ig_md.iterator_1  = Update_lvt_pid_1.execute(0);
