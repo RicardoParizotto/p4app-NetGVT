@@ -88,7 +88,7 @@ void send_packets(const char *src_ip, int end_simulation_loop) {
 
     struct ether_header eth_hdr;
     memset(&eth_hdr, 0, sizeof(eth_hdr));
-    eth_hdr.ether_type = htons(ETHERTYPE_GVT);
+    eth_hdr.ether_type = ETHERTYPE_GVT;
     memset(eth_hdr.ether_dhost, 0xFF, sizeof(eth_hdr.ether_dhost));
 
     uint8_t manual_mac[6] = {0x94, 0x6d, 0xae, 0x5c, 0x87, 0x72};
