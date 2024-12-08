@@ -29,8 +29,9 @@ TYPE_DELIVER = 0
 ASYNCHRONOUS = "async"
 SYNCHRONOUS = "sync"
 
-gvt = 0
 
+gvt = 0
+n_processes = 0
 start_ppkt = 0
 pid = 0
 lat = np.array([])
@@ -82,6 +83,7 @@ def send(iface, end_time):
     global lvt
     global mode
     global lock
+    global n_processes
     
 
     end_simulation_loop = end_time
@@ -106,7 +108,7 @@ def send(iface, end_time):
     print("total time: " + total)
 
 
-    file = open(f"/home/p4/p4app-NetGVT/results/{mode}_pid{str(pid)}.txt", "a+")
+    file = open(f"/home/p4/p4app-NetGVT/results/{mode}_pid{str(pid)}{str(n_processes)}_size{str(end_time)}.txt", "a+")
     file.write("total time, " + total + "\n") 
     file.close()
 
@@ -117,9 +119,16 @@ def send(iface, end_time):
 
 parser = argparse.ArgumentParser(description='Optional app description')
 
+
+
+# Required positional argument
+parser.add_argument('np', type=int,
+                    help='A required number corresponding to the total number of processes')
+
 # Required positional argument
 parser.add_argument('pid', type=int,
                     help='A required identification for logical process')
+
 
 # Required positional argument
 parser.add_argument('size', type=int,
@@ -128,6 +137,7 @@ parser.add_argument('size', type=int,
 # Required positional argument
 parser.add_argument('iface', type=str,
                     help='A required string corresponding to the interface')
+
 
 # Required positional argument
 parser.add_argument(
@@ -143,6 +153,7 @@ if __name__ == '__main__':
     pid = args.pid
     iface = args.iface
     mode = args.mode
+    n_processes = args.np
 
     new_rec_thread = Thread(target=receive, args=(iface,))
     new_rec_thread.start()
