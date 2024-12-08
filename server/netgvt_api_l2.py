@@ -105,6 +105,9 @@ def send(iface, end_time):
     total = str(end-start)
     print("total time: " + total)
 
+    current_file_path = os.path.abspath(__file__)
+    print(current_file_path)
+
     file = open(f"results/{mode}_pid{str(pid)}.txt", "a+")
     file.write("total time, " + total + "\n") 
     file.close()
