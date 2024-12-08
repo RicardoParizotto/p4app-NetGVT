@@ -5,6 +5,7 @@ import sys
 import socket
 import random
 import struct
+import os
 
 
 from scapy.all import sendp, send, get_if_list, get_if_hwaddr
@@ -35,6 +36,8 @@ pid = 0
 lat = np.array([])
 lvt = 0
 mode = ASYNCHRONOUS
+
+directory = os.getcwd()
 
 
 lock = threading.Lock()
@@ -102,7 +105,7 @@ def send(iface, end_time):
     total = str(end-start)
     print("total time: " + total)
 
-    file = open(f"../results/{mode}_pid{str(pid)}.txt", "a+")
+    file = open(f"results/{mode}_pid{str(pid)}.txt", "a+")
     file.write("total time, " + total + "\n") 
     file.close()
 
