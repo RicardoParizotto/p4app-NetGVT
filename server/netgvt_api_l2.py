@@ -25,8 +25,8 @@ import argparse,sys,time,os
 ETHERTYPE_GVT = 0x8666
 TYPE_PROPOSAL = 1
 TYPE_DELIVER = 0
-ASYNCHRONOUS = 10
-SYNCHRONOUS = 5
+ASYNCHRONOUS = "async"
+SYNCHRONOUS = "sync"
 
 gvt = 0
 
@@ -99,7 +99,12 @@ def send(iface, end_time):
 
     end = time.time()
 #   lat = np.append(lat, 1000*(end-start))
-    print("total time: " + str(end-start))
+    total = str(end-start)
+    print("total time: " + total)
+
+    file = open(f"../results/{mode}_pid{str(pid)}", "a+")
+    file.write("total time, " + total + "\n") 
+    file.close()
 
     time.sleep(10) 
 
@@ -120,6 +125,12 @@ parser.add_argument('size', type=int,
 parser.add_argument('iface', type=str,
                     help='A required string corresponding to the interface')
 
+# Required positional argument
+parser.add_argument(
+    "mode",
+    choices=["sync", "async"],
+    help="Chose the sync operation mode: 'sync' ou 'async'."
+)
 
 if __name__ == '__main__':
 
@@ -127,6 +138,7 @@ if __name__ == '__main__':
   
     pid = args.pid
     iface = args.iface
+    mode = args.mode
 
     new_rec_thread = Thread(target=receive, args=(iface,))
     new_rec_thread.start()
