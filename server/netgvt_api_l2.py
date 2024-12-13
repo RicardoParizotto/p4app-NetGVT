@@ -92,7 +92,8 @@ def send(iface, end_time):
         time.sleep(0.1) 
         lock.acquire()
         if mode==ASYNCHRONOUS or lvt <= gvt:
-            lvt = lvt + 1
+            event_t = random.randint(1, 10)
+            lvt = lvt + event_t
             #print "sending on interface %s to %s" % (iface, str(src_addr))
             pkt =  Ether(src=get_if_hwaddr(iface), dst='ff:ff:ff:ff:ff:ff', type = ETHERTYPE_GVT)
             pkt = pkt / GvtProtocol(type=TYPE_PROPOSAL, value=lvt, pid=pid, gvt=0, rec_control=0)
@@ -108,7 +109,7 @@ def send(iface, end_time):
     print("total time: " + total)
 
 
-    file = open(f"/home/p4/p4app-NetGVT/results/{mode}_pid{str(pid)}{str(n_processes)}_size{str(end_time)}.txt", "a+")
+    file = open(f"/home/p4/p4app-NetGVT/results/d_{mode}_pid{str(pid)}{str(n_processes)}_size{str(end_time)}.txt", "a+")
     file.write("total time, " + total + "\n") 
     file.close()
 
