@@ -92,7 +92,7 @@ def send(iface, end_time):
         time.sleep(0.1) 
         lock.acquire()
         if mode==ASYNCHRONOUS or lvt <= gvt:
-            event_t = random.randint(1, 10)
+            event_t = random.randint(1, 10) if mode == ASYNCHRONOUS else 1
             lvt = lvt + event_t
             #print "sending on interface %s to %s" % (iface, str(src_addr))
             pkt =  Ether(src=get_if_hwaddr(iface), dst='ff:ff:ff:ff:ff:ff', type = ETHERTYPE_GVT)
