@@ -109,7 +109,7 @@ def send(iface, end_time):
     print("total time: " + total)
 
 
-    file = open(f"/home/p4/p4app-NetGVT/results/d_{mode}_pid{str(pid)}{str(n_processes)}_size{str(end_time)}.txt", "a+")
+    file = open(f"/home/p4/p4app-NetGVT/results/drec_{mode}_pid{str(pid)}{str(n_processes)}_size{str(end_time)}.txt", "a+")
     file.write("total time, " + total + "\n") 
     file.close()
 
