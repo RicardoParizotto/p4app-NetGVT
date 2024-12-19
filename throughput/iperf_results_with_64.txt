@@ -1,0 +1,934 @@
+Running iperf test 50 times...
+Running iperf test 1...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size:  595 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32796 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  1.94 GBytes  16.6 Gbits/sec
+[  3]  1.0- 2.0 sec  2.33 GBytes  20.0 Gbits/sec
+[  3]  2.0- 3.0 sec   193 MBytes  1.62 Gbits/sec
+[  3]  3.0- 4.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  4.0- 5.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  5.0- 6.0 sec  1.96 GBytes  16.9 Gbits/sec
+[  3]  6.0- 7.0 sec   350 MBytes  2.94 Gbits/sec
+[  3]  7.0- 8.0 sec   942 MBytes  7.90 Gbits/sec
+[  3]  8.0- 9.0 sec   354 MBytes  2.97 Gbits/sec
+[  3]  9.0-10.0 sec   959 MBytes  8.04 Gbits/sec
+[  3]  0.0-10.0 sec  8.96 GBytes  7.70 Gbits/sec
+Test 1 completed.
+Running iperf test 2...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 3.85 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32798 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  1.96 GBytes  16.8 Gbits/sec
+[  3]  1.0- 2.0 sec   334 MBytes  2.80 Gbits/sec
+[  3]  2.0- 3.0 sec  78.8 MBytes   661 Mbits/sec
+[  3]  3.0- 4.0 sec  1010 MBytes  8.47 Gbits/sec
+[  3]  4.0- 5.0 sec   802 MBytes  6.73 Gbits/sec
+[  3]  5.0- 6.0 sec   128 KBytes  1.05 Mbits/sec
+[  3]  6.0- 7.0 sec  1.29 GBytes  11.1 Gbits/sec
+[  3]  7.0- 8.0 sec   955 KBytes  7.83 Mbits/sec
+[  3]  8.0- 9.0 sec  1.94 GBytes  16.7 Gbits/sec
+[  3]  9.0-10.0 sec  2.31 GBytes  19.8 Gbits/sec
+[  3]  0.0-10.0 sec  9.67 GBytes  8.31 Gbits/sec
+Test 2 completed.
+Running iperf test 3...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 2.19 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32800 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec   548 MBytes  4.60 Gbits/sec
+[  3]  1.0- 2.0 sec   794 MBytes  6.66 Gbits/sec
+[  3]  2.0- 3.0 sec  2.33 GBytes  20.0 Gbits/sec
+[  3]  3.0- 4.0 sec  1.83 GBytes  15.7 Gbits/sec
+[  3]  4.0- 5.0 sec  1022 MBytes  8.57 Gbits/sec
+[  3]  5.0- 6.0 sec   128 KBytes  1.05 Mbits/sec
+[  3]  6.0- 7.0 sec  59.4 MBytes   499 Mbits/sec
+[  3]  7.0- 8.0 sec   575 MBytes  4.83 Gbits/sec
+[  3]  8.0- 9.0 sec  2.55 GBytes  21.9 Gbits/sec
+[  3]  9.0-10.0 sec  1.76 GBytes  15.1 Gbits/sec
+[  3]  0.0-10.2 sec  11.4 GBytes  9.58 Gbits/sec
+Test 3 completed.
+Running iperf test 4...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 1.31 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32802 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec   846 MBytes  7.10 Gbits/sec
+[  3]  1.0- 2.0 sec  2.33 GBytes  20.0 Gbits/sec
+[  3]  2.0- 3.0 sec   864 MBytes  7.25 Gbits/sec
+[  3]  3.0- 4.0 sec  2.60 GBytes  22.3 Gbits/sec
+[  3]  4.0- 5.0 sec  2.44 GBytes  20.9 Gbits/sec
+[  3]  5.0- 6.0 sec  2.13 GBytes  18.3 Gbits/sec
+[  3]  6.0- 7.0 sec  2.36 GBytes  20.3 Gbits/sec
+[  3]  7.0- 8.0 sec   469 MBytes  3.94 Gbits/sec
+[  3]  8.0- 9.0 sec   952 MBytes  7.99 Gbits/sec
+[  3]  9.0-10.0 sec  2.54 GBytes  21.8 Gbits/sec
+[  3]  0.0-10.0 sec  17.5 GBytes  15.0 Gbits/sec
+Test 4 completed.
+Running iperf test 5...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 3.14 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32804 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  1.67 GBytes  14.3 Gbits/sec
+[  3]  1.0- 2.0 sec   636 KBytes  5.21 Mbits/sec
+[  3]  2.0- 3.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  3.0- 4.0 sec   574 MBytes  4.82 Gbits/sec
+[  3]  4.0- 5.0 sec  2.19 GBytes  18.8 Gbits/sec
+[  3]  5.0- 6.0 sec   332 MBytes  2.78 Gbits/sec
+[  3]  6.0- 7.0 sec   662 MBytes  5.55 Gbits/sec
+[  3]  7.0- 8.0 sec   914 MBytes  7.67 Gbits/sec
+[  3]  8.0- 9.0 sec  2.29 GBytes  19.6 Gbits/sec
+[  3]  9.0-10.0 sec  2.37 GBytes  20.3 Gbits/sec
+[  3]  0.0-10.0 sec  10.9 GBytes  9.39 Gbits/sec
+Test 5 completed.
+Running iperf test 6...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size:  476 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32806 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec   593 MBytes  4.97 Gbits/sec
+[  3]  1.0- 2.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  2.0- 3.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  3.0- 4.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  4.0- 5.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  5.0- 6.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  6.0- 7.0 sec   266 MBytes  2.23 Gbits/sec
+[  3]  7.0- 8.0 sec  1.64 GBytes  14.0 Gbits/sec
+[  3]  8.0- 9.0 sec  1.18 MBytes  9.90 Mbits/sec
+[  3]  9.0-10.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  0.0-10.4 sec  2.48 GBytes  2.04 Gbits/sec
+Test 6 completed.
+Running iperf test 7...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 2.83 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32808 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  2.49 GBytes  21.4 Gbits/sec
+[  3]  1.0- 2.0 sec  2.53 GBytes  21.7 Gbits/sec
+[  3]  2.0- 3.0 sec  1.07 GBytes  9.20 Gbits/sec
+[  3]  3.0- 4.0 sec  1.25 GBytes  10.8 Gbits/sec
+[  3]  4.0- 5.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  5.0- 6.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  6.0- 7.0 sec  1017 MBytes  8.53 Gbits/sec
+[  3]  7.0- 8.0 sec   405 MBytes  3.39 Gbits/sec
+[  3]  8.0- 9.0 sec  1.21 GBytes  10.4 Gbits/sec
+[  3]  9.0-10.0 sec   930 MBytes  7.81 Gbits/sec
+[  3]  0.0-10.0 sec  10.8 GBytes  9.32 Gbits/sec
+Test 7 completed.
+Running iperf test 8...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 3.69 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32810 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  2.27 GBytes  19.5 Gbits/sec
+[  3]  1.0- 2.0 sec  1.17 GBytes  10.1 Gbits/sec
+[  3]  2.0- 3.0 sec   128 KBytes  1.05 Mbits/sec
+[  3]  3.0- 4.0 sec  2.00 GBytes  17.2 Gbits/sec
+[  3]  4.0- 5.0 sec  1.19 GBytes  10.2 Gbits/sec
+[  3]  5.0- 6.0 sec  1.92 GBytes  16.5 Gbits/sec
+[  3]  6.0- 7.0 sec  1.46 GBytes  12.5 Gbits/sec
+[  3]  7.0- 8.0 sec  1.89 GBytes  16.2 Gbits/sec
+[  3]  8.0- 9.0 sec  2.50 GBytes  21.4 Gbits/sec
+[  3]  9.0-10.0 sec  2.63 GBytes  22.6 Gbits/sec
+[  3]  0.0-10.0 sec  17.0 GBytes  14.6 Gbits/sec
+Test 8 completed.
+Running iperf test 9...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 1020 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32812 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  2.27 GBytes  19.5 Gbits/sec
+[  3]  1.0- 2.0 sec  1.91 GBytes  16.4 Gbits/sec
+[  3]  2.0- 3.0 sec  1.27 GBytes  10.9 Gbits/sec
+[  3]  3.0- 4.0 sec  1.90 GBytes  16.3 Gbits/sec
+[  3]  4.0- 5.0 sec  2.43 GBytes  20.9 Gbits/sec
+[  3]  5.0- 6.0 sec  1.46 GBytes  12.6 Gbits/sec
+[  3]  6.0- 7.0 sec   764 KBytes  6.26 Mbits/sec
+[  3]  7.0- 8.0 sec  75.1 MBytes   630 Mbits/sec
+[  3]  8.0- 9.0 sec   898 MBytes  7.53 Gbits/sec
+[  3]  9.0-10.0 sec   562 MBytes  4.72 Gbits/sec
+[  3]  0.0-10.2 sec  12.7 GBytes  10.7 Gbits/sec
+Test 9 completed.
+Running iperf test 10...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 3.49 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32814 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  1.08 GBytes  9.24 Gbits/sec
+[  3]  1.0- 2.0 sec  1.68 GBytes  14.4 Gbits/sec
+[  3]  2.0- 3.0 sec   712 MBytes  5.97 Gbits/sec
+[  3]  3.0- 4.0 sec  2.13 GBytes  18.3 Gbits/sec
+[  3]  4.0- 5.0 sec  2.39 GBytes  20.5 Gbits/sec
+[  3]  5.0- 6.0 sec  1.14 GBytes  9.83 Gbits/sec
+[  3]  6.0- 7.0 sec  1.87 GBytes  16.0 Gbits/sec
+[  3]  7.0- 8.0 sec  1.92 GBytes  16.5 Gbits/sec
+[  3]  8.0- 9.0 sec   996 MBytes  8.36 Gbits/sec
+[  3]  9.0-10.0 sec  2.48 GBytes  21.3 Gbits/sec
+[  3]  0.0-10.0 sec  16.4 GBytes  14.0 Gbits/sec
+Test 10 completed.
+Running iperf test 11...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 2.69 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32816 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  2.54 GBytes  21.8 Gbits/sec
+[  3]  1.0- 2.0 sec   786 MBytes  6.59 Gbits/sec
+[  3]  2.0- 3.0 sec  2.48 GBytes  21.3 Gbits/sec
+[  3]  3.0- 4.0 sec  2.66 GBytes  22.8 Gbits/sec
+[  3]  4.0- 5.0 sec  2.42 GBytes  20.8 Gbits/sec
+[  3]  5.0- 6.0 sec   237 MBytes  1.99 Gbits/sec
+[  3]  6.0- 7.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  7.0- 8.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  8.0- 9.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  9.0-10.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  0.0-10.2 sec  11.1 GBytes  9.33 Gbits/sec
+Test 11 completed.
+Running iperf test 12...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 4.00 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32818 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  1.55 GBytes  13.3 Gbits/sec
+[  3]  1.0- 2.0 sec  2.01 GBytes  17.3 Gbits/sec
+[  3]  2.0- 3.0 sec   128 KBytes  1.05 Mbits/sec
+[  3]  3.0- 4.0 sec  1.40 GBytes  12.1 Gbits/sec
+[  3]  4.0- 5.0 sec  2.58 GBytes  22.1 Gbits/sec
+[  3]  5.0- 6.0 sec  1.97 GBytes  17.0 Gbits/sec
+[  3]  6.0- 7.0 sec  1.09 GBytes  9.38 Gbits/sec
+[  3]  7.0- 8.0 sec  2.11 GBytes  18.1 Gbits/sec
+[  3]  8.0- 9.0 sec  2.10 GBytes  18.1 Gbits/sec
+[  3]  9.0-10.0 sec  17.2 MBytes   144 Mbits/sec
+[  3]  0.0-10.0 sec  14.8 GBytes  12.7 Gbits/sec
+Test 12 completed.
+Running iperf test 13...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size:  918 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32820 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  1.09 GBytes  9.35 Gbits/sec
+[  3]  1.0- 2.0 sec  2.22 GBytes  19.1 Gbits/sec
+[  3]  2.0- 3.0 sec  2.30 GBytes  19.8 Gbits/sec
+[  3]  3.0- 4.0 sec   128 KBytes  1.05 Mbits/sec
+[  3]  4.0- 5.0 sec  1.43 GBytes  12.2 Gbits/sec
+[  3]  5.0- 6.0 sec  2.04 GBytes  17.5 Gbits/sec
+[  3]  6.0- 7.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  7.0- 8.0 sec  72.1 MBytes   605 Mbits/sec
+[  3]  8.0- 9.0 sec  2.10 GBytes  18.0 Gbits/sec
+[  3]  9.0-10.0 sec   846 MBytes  7.10 Gbits/sec
+[  3]  0.0-10.1 sec  12.1 GBytes  10.3 Gbits/sec
+Test 13 completed.
+Running iperf test 14...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size:  774 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32822 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  2.28 GBytes  19.6 Gbits/sec
+[  3]  1.0- 2.0 sec   128 KBytes  1.05 Mbits/sec
+[  3]  2.0- 3.0 sec  1.43 GBytes  12.2 Gbits/sec
+[  3]  3.0- 4.0 sec  2.58 GBytes  22.2 Gbits/sec
+[  3]  4.0- 5.0 sec   891 MBytes  7.48 Gbits/sec
+[  3]  5.0- 6.0 sec  1.24 GBytes  10.6 Gbits/sec
+[  3]  6.0- 7.0 sec  2.05 GBytes  17.6 Gbits/sec
+[  3]  7.0- 8.0 sec   918 MBytes  7.70 Gbits/sec
+[  3]  8.0- 9.0 sec  2.44 GBytes  21.0 Gbits/sec
+[  3]  9.0-10.0 sec  2.59 GBytes  22.3 Gbits/sec
+[  3]  0.0-10.0 sec  16.4 GBytes  14.1 Gbits/sec
+Test 14 completed.
+Running iperf test 15...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size:  986 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32824 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  1.20 GBytes  10.3 Gbits/sec
+[  3]  1.0- 2.0 sec   191 KBytes  1.56 Mbits/sec
+[  3]  2.0- 3.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  3.0- 4.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  4.0- 5.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  5.0- 6.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  6.0- 7.0 sec   128 KBytes  1.05 Mbits/sec
+[  3]  7.0- 8.0 sec  1.81 GBytes  15.5 Gbits/sec
+[  3]  8.0- 9.0 sec  1.97 GBytes  16.9 Gbits/sec
+[  3]  9.0-10.0 sec  1.50 GBytes  12.9 Gbits/sec
+[  3]  0.0-10.1 sec  6.48 GBytes  5.49 Gbits/sec
+Test 15 completed.
+Running iperf test 16...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 3.05 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32826 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  2.50 GBytes  21.5 Gbits/sec
+[  3]  1.0- 2.0 sec  2.65 GBytes  22.7 Gbits/sec
+[  3]  2.0- 3.0 sec  2.52 GBytes  21.6 Gbits/sec
+[  3]  3.0- 4.0 sec   892 KBytes  7.30 Mbits/sec
+[  3]  4.0- 5.0 sec  1.26 GBytes  10.8 Gbits/sec
+[  3]  5.0- 6.0 sec   868 MBytes  7.28 Gbits/sec
+[  3]  6.0- 7.0 sec  12.9 MBytes   108 Mbits/sec
+[  3]  7.0- 8.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  8.0- 9.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  9.0-10.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  0.0-10.1 sec  9.78 GBytes  8.32 Gbits/sec
+Test 16 completed.
+Running iperf test 17...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 3.03 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32828 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  2.53 GBytes  21.7 Gbits/sec
+[  3]  1.0- 2.0 sec  2.39 GBytes  20.6 Gbits/sec
+[  3]  2.0- 3.0 sec  2.31 GBytes  19.9 Gbits/sec
+[  3]  3.0- 4.0 sec  1.99 GBytes  17.1 Gbits/sec
+[  3]  4.0- 5.0 sec   128 KBytes  1.05 Mbits/sec
+[  3]  5.0- 6.0 sec  79.2 MBytes   665 Mbits/sec
+[  3]  6.0- 7.0 sec  2.24 GBytes  19.3 Gbits/sec
+[  3]  7.0- 8.0 sec  2.13 GBytes  18.3 Gbits/sec
+[  3]  8.0- 9.0 sec  58.4 MBytes   490 Mbits/sec
+[  3]  9.0-10.0 sec  1.33 GBytes  11.4 Gbits/sec
+[  3]  0.0-10.0 sec  15.1 GBytes  12.9 Gbits/sec
+Test 17 completed.
+Running iperf test 18...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 3.38 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32830 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  52.7 MBytes   442 Mbits/sec
+[  3]  1.0- 2.0 sec  59.0 MBytes   495 Mbits/sec
+[  3]  2.0- 3.0 sec  1.96 GBytes  16.8 Gbits/sec
+[  3]  3.0- 4.0 sec  1.89 GBytes  16.2 Gbits/sec
+[  3]  4.0- 5.0 sec  2.03 GBytes  17.5 Gbits/sec
+[  3]  5.0- 6.0 sec   167 MBytes  1.40 Gbits/sec
+[  3]  6.0- 7.0 sec  83.5 MBytes   701 Mbits/sec
+[  3]  7.0- 8.0 sec  1.87 GBytes  16.1 Gbits/sec
+[  3]  8.0- 9.0 sec  1.66 GBytes  14.2 Gbits/sec
+[  3]  9.0-10.0 sec  1.85 GBytes  15.9 Gbits/sec
+[  3]  0.0-10.0 sec  11.6 GBytes  9.98 Gbits/sec
+Test 18 completed.
+Running iperf test 19...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size:  960 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32832 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec   877 MBytes  7.36 Gbits/sec
+[  3]  1.0- 2.0 sec  2.35 GBytes  20.2 Gbits/sec
+[  3]  2.0- 3.0 sec   311 MBytes  2.61 Gbits/sec
+[  3]  3.0- 4.0 sec   106 MBytes   885 Mbits/sec
+[  3]  4.0- 5.0 sec   128 KBytes  1.05 Mbits/sec
+[  3]  5.0- 6.0 sec  1.34 GBytes  11.5 Gbits/sec
+[  3]  6.0- 7.0 sec  1.73 GBytes  14.9 Gbits/sec
+[  3]  7.0- 8.0 sec   449 MBytes  3.77 Gbits/sec
+[  3]  8.0- 9.0 sec   818 MBytes  6.87 Gbits/sec
+[  3]  9.0-10.0 sec  1.30 GBytes  11.1 Gbits/sec
+[  3]  0.0-10.2 sec  9.22 GBytes  7.73 Gbits/sec
+Test 19 completed.
+Running iperf test 20...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 2.91 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32834 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  2.46 GBytes  21.1 Gbits/sec
+[  3]  1.0- 2.0 sec  1016 MBytes  8.52 Gbits/sec
+[  3]  2.0- 3.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  3.0- 4.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  4.0- 5.0 sec   805 MBytes  6.75 Gbits/sec
+[  3]  5.0- 6.0 sec  1.24 GBytes  10.6 Gbits/sec
+[  3]  6.0- 7.0 sec   113 MBytes   951 Mbits/sec
+[  3]  7.0- 8.0 sec   989 MBytes  8.29 Gbits/sec
+[  3]  8.0- 9.0 sec  1.94 GBytes  16.7 Gbits/sec
+[  3]  9.0-10.0 sec  2.00 GBytes  17.2 Gbits/sec
+[  3]  0.0-10.0 sec  10.5 GBytes  9.01 Gbits/sec
+Test 20 completed.
+Running iperf test 21...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 3.21 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32836 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  2.49 GBytes  21.4 Gbits/sec
+[  3]  1.0- 2.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  2.0- 3.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  3.0- 4.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  4.0- 5.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  5.0- 6.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  6.0- 7.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  7.0- 8.0 sec   963 MBytes  8.08 Gbits/sec
+[  3]  8.0- 9.0 sec  2.47 GBytes  21.3 Gbits/sec
+[  3]  9.0-10.0 sec  1.90 GBytes  16.3 Gbits/sec
+[  3]  0.0-10.0 sec  7.80 GBytes  6.70 Gbits/sec
+Test 21 completed.
+Running iperf test 22...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 3.16 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32838 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec   805 MBytes  6.75 Gbits/sec
+[  3]  1.0- 2.0 sec  1.26 GBytes  10.8 Gbits/sec
+[  3]  2.0- 3.0 sec  1.83 GBytes  15.7 Gbits/sec
+[  3]  3.0- 4.0 sec  2.39 GBytes  20.5 Gbits/sec
+[  3]  4.0- 5.0 sec  2.45 GBytes  21.0 Gbits/sec
+[  3]  5.0- 6.0 sec  2.46 GBytes  21.1 Gbits/sec
+[  3]  6.0- 7.0 sec  1.21 GBytes  10.4 Gbits/sec
+[  3]  7.0- 8.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  8.0- 9.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  9.0-10.0 sec   553 MBytes  4.64 Gbits/sec
+[  3]  0.0-10.0 sec  12.9 GBytes  11.1 Gbits/sec
+Test 22 completed.
+Running iperf test 23...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 3.20 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32840 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec   820 MBytes  6.88 Gbits/sec
+[  3]  1.0- 2.0 sec   358 MBytes  3.01 Gbits/sec
+[  3]  2.0- 3.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  3.0- 4.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  4.0- 5.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  5.0- 6.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  6.0- 7.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  7.0- 8.0 sec   636 MBytes  5.33 Gbits/sec
+[  3]  8.0- 9.0 sec  2.28 GBytes  19.6 Gbits/sec
+[  3]  9.0-10.0 sec  1.52 GBytes  13.1 Gbits/sec
+[  3]  0.0-10.3 sec  5.57 GBytes  4.66 Gbits/sec
+Test 23 completed.
+Running iperf test 24...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 2.08 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32842 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  1.94 GBytes  16.7 Gbits/sec
+[  3]  1.0- 2.0 sec  1.93 GBytes  16.6 Gbits/sec
+[  3]  2.0- 3.0 sec  2.66 GBytes  22.8 Gbits/sec
+[  3]  3.0- 4.0 sec  1.12 MBytes  9.38 Mbits/sec
+[  3]  4.0- 5.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  5.0- 6.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  6.0- 7.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  7.0- 8.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  8.0- 9.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  9.0-10.0 sec  1.15 GBytes  9.86 Gbits/sec
+[  3]  0.0-10.5 sec  7.68 GBytes  6.31 Gbits/sec
+Test 24 completed.
+Running iperf test 25...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 1.93 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32844 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  2.41 GBytes  20.7 Gbits/sec
+[  3]  1.0- 2.0 sec   188 MBytes  1.58 Gbits/sec
+[  3]  2.0- 3.0 sec  1.11 GBytes  9.54 Gbits/sec
+[  3]  3.0- 4.0 sec  1.46 GBytes  12.5 Gbits/sec
+[  3]  4.0- 5.0 sec   992 MBytes  8.32 Gbits/sec
+[  3]  5.0- 6.0 sec   928 MBytes  7.78 Gbits/sec
+[  3]  6.0- 7.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  7.0- 8.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  8.0- 9.0 sec   530 MBytes  4.45 Gbits/sec
+[  3]  9.0-10.0 sec  2.45 GBytes  21.0 Gbits/sec
+[  3]  0.0-10.0 sec  10.0 GBytes  8.60 Gbits/sec
+Test 25 completed.
+Running iperf test 26...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 1.14 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32846 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  1021 MBytes  8.57 Gbits/sec
+[  3]  1.0- 2.0 sec   445 KBytes  3.65 Mbits/sec
+[  3]  2.0- 3.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  3.0- 4.0 sec   328 MBytes  2.75 Gbits/sec
+[  3]  4.0- 5.0 sec   891 MBytes  7.48 Gbits/sec
+[  3]  5.0- 6.0 sec  2.36 GBytes  20.3 Gbits/sec
+[  3]  6.0- 7.0 sec  1.83 GBytes  15.7 Gbits/sec
+[  3]  7.0- 8.0 sec   701 KBytes  5.74 Mbits/sec
+[  3]  8.0- 9.0 sec  1.38 GBytes  11.8 Gbits/sec
+[  3]  9.0-10.0 sec  1.97 GBytes  17.0 Gbits/sec
+[  3]  0.0-10.0 sec  9.73 GBytes  8.35 Gbits/sec
+Test 26 completed.
+Running iperf test 27...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 1.24 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32848 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  2.06 GBytes  17.7 Gbits/sec
+[  3]  1.0- 2.0 sec   629 MBytes  5.27 Gbits/sec
+[  3]  2.0- 3.0 sec   124 MBytes  1.04 Gbits/sec
+[  3]  3.0- 4.0 sec  1021 MBytes  8.57 Gbits/sec
+[  3]  4.0- 5.0 sec  1.37 MBytes  11.5 Mbits/sec
+[  3]  5.0- 6.0 sec  2.15 GBytes  18.5 Gbits/sec
+[  3]  6.0- 7.0 sec  2.08 GBytes  17.9 Gbits/sec
+[  3]  7.0- 8.0 sec   128 KBytes  1.05 Mbits/sec
+[  3]  8.0- 9.0 sec   151 MBytes  1.27 Gbits/sec
+[  3]  9.0-10.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  0.0-10.4 sec  8.18 GBytes  6.75 Gbits/sec
+Test 27 completed.
+Running iperf test 28...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 1.09 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32850 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  2.41 GBytes  20.7 Gbits/sec
+[  3]  1.0- 2.0 sec  2.36 GBytes  20.3 Gbits/sec
+[  3]  2.0- 3.0 sec  2.34 GBytes  20.1 Gbits/sec
+[  3]  3.0- 4.0 sec  2.22 GBytes  19.1 Gbits/sec
+[  3]  4.0- 5.0 sec   128 KBytes  1.05 Mbits/sec
+[  3]  5.0- 6.0 sec  43.2 MBytes   362 Mbits/sec
+[  3]  6.0- 7.0 sec   957 MBytes  8.03 Gbits/sec
+[  3]  7.0- 8.0 sec   128 KBytes  1.05 Mbits/sec
+[  3]  8.0- 9.0 sec  1.34 GBytes  11.5 Gbits/sec
+[  3]  9.0-10.0 sec  1.99 GBytes  17.1 Gbits/sec
+[  3]  0.0-10.0 sec  13.7 GBytes  11.7 Gbits/sec
+Test 28 completed.
+Running iperf test 29...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 2.87 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32852 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  1.15 GBytes  9.85 Gbits/sec
+[  3]  1.0- 2.0 sec  1.96 GBytes  16.8 Gbits/sec
+[  3]  2.0- 3.0 sec   124 MBytes  1.04 Gbits/sec
+[  3]  3.0- 4.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  4.0- 5.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  5.0- 6.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  6.0- 7.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  7.0- 8.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  8.0- 9.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  9.0-10.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  0.0-10.2 sec  3.23 GBytes  2.70 Gbits/sec
+Test 29 completed.
+Running iperf test 30...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 4.00 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32854 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  2.27 GBytes  19.5 Gbits/sec
+[  3]  1.0- 2.0 sec  1.16 GBytes  9.93 Gbits/sec
+[  3]  2.0- 3.0 sec  2.13 GBytes  18.3 Gbits/sec
+[  3]  3.0- 4.0 sec   955 MBytes  8.01 Gbits/sec
+[  3]  4.0- 5.0 sec  1.06 MBytes  8.86 Mbits/sec
+[  3]  5.0- 6.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  6.0- 7.0 sec   128 KBytes  1.05 Mbits/sec
+[  3]  7.0- 8.0 sec   511 MBytes  4.28 Gbits/sec
+[  3]  8.0- 9.0 sec  1.64 GBytes  14.1 Gbits/sec
+[  3]  9.0-10.0 sec  1.14 GBytes  9.82 Gbits/sec
+[  3]  0.0-10.1 sec  9.77 GBytes  8.31 Gbits/sec
+Test 30 completed.
+Running iperf test 31...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 3.74 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32856 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  2.46 GBytes  21.1 Gbits/sec
+[  3]  1.0- 2.0 sec  1.66 GBytes  14.3 Gbits/sec
+[  3]  2.0- 3.0 sec  1.21 GBytes  10.4 Gbits/sec
+[  3]  3.0- 4.0 sec  2.49 GBytes  21.4 Gbits/sec
+[  3]  4.0- 5.0 sec  2.39 GBytes  20.5 Gbits/sec
+[  3]  5.0- 6.0 sec  2.12 GBytes  18.2 Gbits/sec
+[  3]  6.0- 7.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  7.0- 8.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  8.0- 9.0 sec   128 KBytes  1.05 Mbits/sec
+[  3]  9.0-10.0 sec  1.84 GBytes  15.8 Gbits/sec
+[  3]  0.0-10.0 sec  14.2 GBytes  12.2 Gbits/sec
+Test 31 completed.
+Running iperf test 32...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 4.00 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32858 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  1.85 GBytes  15.9 Gbits/sec
+[  3]  1.0- 2.0 sec  1.31 GBytes  11.2 Gbits/sec
+[  3]  2.0- 3.0 sec  1.11 GBytes  9.53 Gbits/sec
+[  3]  3.0- 4.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  4.0- 5.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  5.0- 6.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  6.0- 7.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  7.0- 8.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  8.0- 9.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  9.0-10.0 sec   936 MBytes  7.85 Gbits/sec
+[  3]  0.0-10.5 sec  5.18 GBytes  4.25 Gbits/sec
+Test 32 completed.
+Running iperf test 33...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 3.67 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32860 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  2.12 GBytes  18.2 Gbits/sec
+[  3]  1.0- 2.0 sec   734 MBytes  6.15 Gbits/sec
+[  3]  2.0- 3.0 sec  2.05 GBytes  17.7 Gbits/sec
+[  3]  3.0- 4.0 sec  73.9 MBytes   620 Mbits/sec
+[  3]  4.0- 5.0 sec  1.22 GBytes  10.5 Gbits/sec
+[  3]  5.0- 6.0 sec  1.39 GBytes  11.9 Gbits/sec
+[  3]  6.0- 7.0 sec  1.78 GBytes  15.3 Gbits/sec
+[  3]  7.0- 8.0 sec  1.87 GBytes  16.1 Gbits/sec
+[  3]  8.0- 9.0 sec   261 MBytes  2.19 Gbits/sec
+[  3]  9.0-10.0 sec  1.06 GBytes  9.13 Gbits/sec
+[  3]  0.0-10.0 sec  12.5 GBytes  10.8 Gbits/sec
+Test 33 completed.
+Running iperf test 34...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 1.32 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32862 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec   868 MBytes  7.28 Gbits/sec
+[  3]  1.0- 2.0 sec  1.95 GBytes  16.7 Gbits/sec
+[  3]  2.0- 3.0 sec  1.50 GBytes  12.9 Gbits/sec
+[  3]  3.0- 4.0 sec  22.4 MBytes   188 Mbits/sec
+[  3]  4.0- 5.0 sec  2.01 GBytes  17.3 Gbits/sec
+[  3]  5.0- 6.0 sec  1.58 GBytes  13.6 Gbits/sec
+[  3]  6.0- 7.0 sec   128 KBytes  1.05 Mbits/sec
+[  3]  7.0- 8.0 sec  1.87 GBytes  16.0 Gbits/sec
+[  3]  8.0- 9.0 sec  2.25 GBytes  19.3 Gbits/sec
+[  3]  9.0-10.0 sec  2.05 GBytes  17.6 Gbits/sec
+[  3]  0.0-10.0 sec  14.1 GBytes  12.1 Gbits/sec
+Test 34 completed.
+Running iperf test 35...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 1.16 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32864 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  2.37 GBytes  20.3 Gbits/sec
+[  3]  1.0- 2.0 sec  2.23 GBytes  19.2 Gbits/sec
+[  3]  2.0- 3.0 sec   840 MBytes  7.05 Gbits/sec
+[  3]  3.0- 4.0 sec  1.37 GBytes  11.7 Gbits/sec
+[  3]  4.0- 5.0 sec  1.41 GBytes  12.1 Gbits/sec
+[  3]  5.0- 6.0 sec  1.49 GBytes  12.8 Gbits/sec
+[  3]  6.0- 7.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  7.0- 8.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  8.0- 9.0 sec   336 MBytes  2.82 Gbits/sec
+[  3]  9.0-10.0 sec  2.29 GBytes  19.7 Gbits/sec
+[  3]  0.0-10.0 sec  12.3 GBytes  10.6 Gbits/sec
+Test 35 completed.
+Running iperf test 36...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 4.00 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32866 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  1.34 GBytes  11.5 Gbits/sec
+[  3]  1.0- 2.0 sec  1.47 GBytes  12.6 Gbits/sec
+[  3]  2.0- 3.0 sec  2.19 GBytes  18.8 Gbits/sec
+[  3]  3.0- 4.0 sec   910 MBytes  7.64 Gbits/sec
+[  3]  4.0- 5.0 sec  2.69 GBytes  23.1 Gbits/sec
+[  3]  5.0- 6.0 sec  2.46 GBytes  21.2 Gbits/sec
+[  3]  6.0- 7.0 sec   716 MBytes  6.01 Gbits/sec
+[  3]  7.0- 8.0 sec   119 MBytes   996 Mbits/sec
+[  3]  8.0- 9.0 sec  1.13 GBytes  9.73 Gbits/sec
+[  3]  9.0-10.0 sec  2.44 GBytes  20.9 Gbits/sec
+[  3]  0.0-10.0 sec  15.4 GBytes  13.3 Gbits/sec
+Test 36 completed.
+Running iperf test 37...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 1.44 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32868 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  1.73 GBytes  14.9 Gbits/sec
+[  3]  1.0- 2.0 sec   942 MBytes  7.90 Gbits/sec
+[  3]  2.0- 3.0 sec   979 MBytes  8.21 Gbits/sec
+[  3]  3.0- 4.0 sec  2.50 GBytes  21.5 Gbits/sec
+[  3]  4.0- 5.0 sec  1022 MBytes  8.57 Gbits/sec
+[  3]  5.0- 6.0 sec  1.72 GBytes  14.8 Gbits/sec
+[  3]  6.0- 7.0 sec   636 KBytes  5.21 Mbits/sec
+[  3]  7.0- 8.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  8.0- 9.0 sec   128 KBytes  1.05 Mbits/sec
+[  3]  9.0-10.0 sec   983 MBytes  8.25 Gbits/sec
+[  3]  0.0-10.1 sec  9.79 GBytes  8.36 Gbits/sec
+Test 37 completed.
+Running iperf test 38...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 1.53 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32870 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  1.93 GBytes  16.6 Gbits/sec
+[  3]  1.0- 2.0 sec   255 KBytes  2.09 Mbits/sec
+[  3]  2.0- 3.0 sec  1.54 GBytes  13.2 Gbits/sec
+[  3]  3.0- 4.0 sec   878 MBytes  7.36 Gbits/sec
+[  3]  4.0- 5.0 sec  2.29 GBytes  19.6 Gbits/sec
+[  3]  5.0- 6.0 sec  2.52 GBytes  21.7 Gbits/sec
+[  3]  6.0- 7.0 sec  2.40 GBytes  20.7 Gbits/sec
+[  3]  7.0- 8.0 sec  1.00 GBytes  8.63 Gbits/sec
+[  3]  8.0- 9.0 sec  1.56 GBytes  13.4 Gbits/sec
+[  3]  9.0-10.0 sec  1.06 MBytes  8.87 Mbits/sec
+[  3]  0.0-10.2 sec  14.1 GBytes  11.8 Gbits/sec
+Test 38 completed.
+Running iperf test 39...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 2.77 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32872 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  2.42 GBytes  20.8 Gbits/sec
+[  3]  1.0- 2.0 sec  1.82 GBytes  15.7 Gbits/sec
+[  3]  2.0- 3.0 sec  1.51 GBytes  13.0 Gbits/sec
+[  3]  3.0- 4.0 sec  2.43 GBytes  20.9 Gbits/sec
+[  3]  4.0- 5.0 sec  2.13 GBytes  18.3 Gbits/sec
+[  3]  5.0- 6.0 sec  2.14 GBytes  18.4 Gbits/sec
+[  3]  6.0- 7.0 sec  2.54 GBytes  21.8 Gbits/sec
+[  3]  7.0- 8.0 sec  2.37 GBytes  20.4 Gbits/sec
+[  3]  8.0- 9.0 sec   786 MBytes  6.59 Gbits/sec
+[  3]  9.0-10.0 sec  1.93 GBytes  16.6 Gbits/sec
+[  3]  0.0-10.3 sec  20.1 GBytes  16.7 Gbits/sec
+Test 39 completed.
+Running iperf test 40...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 1.73 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32874 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  2.21 GBytes  19.0 Gbits/sec
+[  3]  1.0- 2.0 sec   957 MBytes  8.03 Gbits/sec
+[  3]  2.0- 3.0 sec  2.24 GBytes  19.2 Gbits/sec
+[  3]  3.0- 4.0 sec  2.43 GBytes  20.8 Gbits/sec
+[  3]  4.0- 5.0 sec  2.39 GBytes  20.5 Gbits/sec
+[  3]  5.0- 6.0 sec   935 MBytes  7.84 Gbits/sec
+[  3]  6.0- 7.0 sec  2.02 GBytes  17.4 Gbits/sec
+[  3]  7.0- 8.0 sec  2.00 GBytes  17.2 Gbits/sec
+[  3]  8.0- 9.0 sec  2.59 GBytes  22.3 Gbits/sec
+[  3]  9.0-10.0 sec  2.41 GBytes  20.7 Gbits/sec
+[  3]  0.0-10.0 sec  20.1 GBytes  17.3 Gbits/sec
+Test 40 completed.
+Running iperf test 41...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 4.00 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32876 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  2.06 GBytes  17.7 Gbits/sec
+[  3]  1.0- 2.0 sec  1.88 GBytes  16.2 Gbits/sec
+[  3]  2.0- 3.0 sec   928 MBytes  7.79 Gbits/sec
+[  3]  3.0- 4.0 sec  2.10 GBytes  18.0 Gbits/sec
+[  3]  4.0- 5.0 sec  1.94 GBytes  16.7 Gbits/sec
+[  3]  5.0- 6.0 sec  2.43 GBytes  20.9 Gbits/sec
+[  3]  6.0- 7.0 sec   249 MBytes  2.09 Gbits/sec
+[  3]  7.0- 8.0 sec  1.09 GBytes  9.37 Gbits/sec
+[  3]  8.0- 9.0 sec  2.48 GBytes  21.3 Gbits/sec
+[  3]  9.0-10.0 sec   842 MBytes  7.06 Gbits/sec
+[  3]  0.0-10.0 sec  16.0 GBytes  13.7 Gbits/sec
+Test 41 completed.
+Running iperf test 42...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 3.30 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32878 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  1.49 GBytes  12.8 Gbits/sec
+[  3]  1.0- 2.0 sec  1.82 GBytes  15.7 Gbits/sec
+[  3]  2.0- 3.0 sec  1.55 GBytes  13.3 Gbits/sec
+[  3]  3.0- 4.0 sec  1.73 GBytes  14.8 Gbits/sec
+[  3]  4.0- 5.0 sec  1.95 GBytes  16.8 Gbits/sec
+[  3]  5.0- 6.0 sec   384 MBytes  3.22 Gbits/sec
+[  3]  6.0- 7.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  7.0- 8.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  8.0- 9.0 sec  1.78 GBytes  15.3 Gbits/sec
+[  3]  9.0-10.0 sec  2.40 GBytes  20.6 Gbits/sec
+[  3]  0.0-10.0 sec  13.1 GBytes  11.3 Gbits/sec
+Test 42 completed.
+Running iperf test 43...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 4.00 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32880 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec   900 MBytes  7.55 Gbits/sec
+[  3]  1.0- 2.0 sec   938 MBytes  7.87 Gbits/sec
+[  3]  2.0- 3.0 sec   902 MBytes  7.57 Gbits/sec
+[  3]  3.0- 4.0 sec   852 MBytes  7.15 Gbits/sec
+[  3]  4.0- 5.0 sec  1.99 GBytes  17.1 Gbits/sec
+[  3]  5.0- 6.0 sec   963 MBytes  8.08 Gbits/sec
+[  3]  6.0- 7.0 sec  2.55 GBytes  21.9 Gbits/sec
+[  3]  7.0- 8.0 sec   919 MBytes  7.71 Gbits/sec
+[  3]  8.0- 9.0 sec  2.49 GBytes  21.4 Gbits/sec
+[  3]  9.0-10.0 sec   682 MBytes  5.72 Gbits/sec
+[  3]  0.0-10.3 sec  13.1 GBytes  10.9 Gbits/sec
+Test 43 completed.
+Running iperf test 44...
+Test 44 completed.
+Running iperf test 45...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 3.33 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32884 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec   977 MBytes  8.19 Gbits/sec
+[  3]  1.0- 2.0 sec  2.35 GBytes  20.2 Gbits/sec
+[  3]  2.0- 3.0 sec   826 MBytes  6.93 Gbits/sec
+[  3]  3.0- 4.0 sec  1.88 GBytes  16.1 Gbits/sec
+[  3]  4.0- 5.0 sec   240 MBytes  2.01 Gbits/sec
+[  3]  5.0- 6.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  6.0- 7.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  7.0- 8.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  8.0- 9.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  9.0-10.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  0.0-10.2 sec  6.22 GBytes  5.21 Gbits/sec
+Test 45 completed.
+Running iperf test 46...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 3.22 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32886 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  2.54 GBytes  21.8 Gbits/sec
+[  3]  1.0- 2.0 sec  2.45 GBytes  21.1 Gbits/sec
+[  3]  2.0- 3.0 sec  1.02 GBytes  8.77 Gbits/sec
+[  3]  3.0- 4.0 sec   289 MBytes  2.43 Gbits/sec
+[  3]  4.0- 5.0 sec  1.79 GBytes  15.4 Gbits/sec
+[  3]  5.0- 6.0 sec   945 MBytes  7.93 Gbits/sec
+[  3]  6.0- 7.0 sec  1.03 GBytes  8.88 Gbits/sec
+[  3]  7.0- 8.0 sec  1.17 GBytes  10.0 Gbits/sec
+[  3]  8.0- 9.0 sec   951 MBytes  7.98 Gbits/sec
+[  3]  9.0-10.0 sec  2.13 GBytes  18.3 Gbits/sec
+[  3]  0.0-10.0 sec  14.3 GBytes  12.3 Gbits/sec
+Test 46 completed.
+Running iperf test 47...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 2.86 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32888 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  2.44 GBytes  21.0 Gbits/sec
+[  3]  1.0- 2.0 sec   864 MBytes  7.25 Gbits/sec
+[  3]  2.0- 3.0 sec  2.13 GBytes  18.3 Gbits/sec
+[  3]  3.0- 4.0 sec  1.28 GBytes  11.0 Gbits/sec
+[  3]  4.0- 5.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  5.0- 6.0 sec  0.00 Bytes  0.00 bits/sec
+[  3]  6.0- 7.0 sec   831 MBytes  6.97 Gbits/sec
+[  3]  7.0- 8.0 sec  1.17 GBytes  10.0 Gbits/sec
+[  3]  8.0- 9.0 sec  1.73 GBytes  14.8 Gbits/sec
+[  3]  9.0-10.0 sec  1.28 GBytes  11.0 Gbits/sec
+[  3]  0.0-10.1 sec  11.7 GBytes  9.92 Gbits/sec
+Test 47 completed.
+Running iperf test 48...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 2.15 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32890 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  1.13 GBytes  9.73 Gbits/sec
+[  3]  1.0- 2.0 sec   172 MBytes  1.44 Gbits/sec
+[  3]  2.0- 3.0 sec  2.23 GBytes  19.1 Gbits/sec
+[  3]  3.0- 4.0 sec  2.36 GBytes  20.2 Gbits/sec
+[  3]  4.0- 5.0 sec  2.31 GBytes  19.8 Gbits/sec
+[  3]  5.0- 6.0 sec  1.99 GBytes  17.1 Gbits/sec
+[  3]  6.0- 7.0 sec   962 MBytes  8.07 Gbits/sec
+[  3]  7.0- 8.0 sec   128 KBytes  1.05 Mbits/sec
+[  3]  8.0- 9.0 sec   850 MBytes  7.13 Gbits/sec
+[  3]  9.0-10.0 sec  2.51 GBytes  21.5 Gbits/sec
+[  3]  0.0-10.0 sec  14.5 GBytes  12.4 Gbits/sec
+Test 48 completed.
+Running iperf test 49...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 3.98 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32892 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  2.54 GBytes  21.8 Gbits/sec
+[  3]  1.0- 2.0 sec  1.26 GBytes  10.9 Gbits/sec
+[  3]  2.0- 3.0 sec   947 MBytes  7.95 Gbits/sec
+[  3]  3.0- 4.0 sec   865 MBytes  7.25 Gbits/sec
+[  3]  4.0- 5.0 sec  1.93 GBytes  16.6 Gbits/sec
+[  3]  5.0- 6.0 sec   959 MBytes  8.04 Gbits/sec
+[  3]  6.0- 7.0 sec  2.01 GBytes  17.3 Gbits/sec
+[  3]  7.0- 8.0 sec  1.48 GBytes  12.7 Gbits/sec
+[  3]  8.0- 9.0 sec   128 KBytes  1.05 Mbits/sec
+[  3]  9.0-10.0 sec  1.40 GBytes  12.0 Gbits/sec
+[  3]  0.0-10.2 sec  13.3 GBytes  11.3 Gbits/sec
+Test 49 completed.
+Running iperf test 50...
+------------------------------------------------------------
+Client connecting to 10.0.1.2, TCP port 5001
+TCP window size: 3.05 MByte (default)
+------------------------------------------------------------
+[  3] local 10.0.1.1 port 32894 connected with 10.0.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  1.08 GBytes  9.28 Gbits/sec
+[  3]  1.0- 2.0 sec   193 MBytes  1.62 Gbits/sec
+[  3]  2.0- 3.0 sec  2.35 GBytes  20.2 Gbits/sec
+[  3]  3.0- 4.0 sec   969 MBytes  8.13 Gbits/sec
+[  3]  4.0- 5.0 sec   926 MBytes  7.77 Gbits/sec
+[  3]  5.0- 6.0 sec   897 MBytes  7.52 Gbits/sec
+[  3]  6.0- 7.0 sec  1.00 GBytes  8.61 Gbits/sec
+[  3]  7.0- 8.0 sec  1.74 GBytes  14.9 Gbits/sec
+[  3]  8.0- 9.0 sec  2.41 GBytes  20.7 Gbits/sec
+[  3]  9.0-10.0 sec   932 MBytes  7.82 Gbits/sec
+[  3]  0.0-10.0 sec  12.4 GBytes  10.7 Gbits/sec
+Test 50 completed.
