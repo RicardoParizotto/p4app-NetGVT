@@ -5,6 +5,7 @@ import sys
 import socket
 import random
 import struct
+import os
 
 
 from scapy.all import sendp, send, get_if_list, get_if_hwaddr
@@ -25,16 +26,19 @@ import argparse,sys,time,os
 ETHERTYPE_GVT = 0x8666
 TYPE_PROPOSAL = 1
 TYPE_DELIVER = 0
-ASYNCHRONOUS = 10
-SYNCHRONOUS = 5
+ASYNCHRONOUS = "async"
+SYNCHRONOUS = "sync"
+
 
 gvt = 0
-
+n_processes = 0
 start_ppkt = 0
 pid = 0
 lat = np.array([])
 lvt = 0
 mode = ASYNCHRONOUS
+
+directory = os.getcwd()
 
 
 lock = threading.Lock()
@@ -79,6 +83,7 @@ def send(iface, end_time):
     global lvt
     global mode
     global lock
+    global n_processes
     
 
     end_simulation_loop = end_time
@@ -87,7 +92,8 @@ def send(iface, end_time):
         time.sleep(0.1) 
         lock.acquire()
         if mode==ASYNCHRONOUS or lvt <= gvt:
-            lvt = lvt + 1
+            event_t = random.randint(1, 10) if mode == ASYNCHRONOUS else 1
+            lvt = lvt + event_t
             #print "sending on interface %s to %s" % (iface, str(src_addr))
             pkt =  Ether(src=get_if_hwaddr(iface), dst='ff:ff:ff:ff:ff:ff', type = ETHERTYPE_GVT)
             pkt = pkt / GvtProtocol(type=TYPE_PROPOSAL, value=lvt, pid=pid, gvt=0, rec_control=0)
@@ -99,7 +105,13 @@ def send(iface, end_time):
 
     end = time.time()
 #   lat = np.append(lat, 1000*(end-start))
-    print("total time: " + str(end-start))
+    total = str(end-start)
+    print("total time: " + total)
+
+
+    file = open(f"/home/p4/p4app-NetGVT/results/drec_{mode}_pid{str(pid)}{str(n_processes)}_size{str(end_time)}.txt", "a+")
+    file.write("total time, " + total + "\n") 
+    file.close()
 
     time.sleep(10) 
 
@@ -108,9 +120,16 @@ def send(iface, end_time):
 
 parser = argparse.ArgumentParser(description='Optional app description')
 
+
+
+# Required positional argument
+parser.add_argument('np', type=int,
+                    help='A required number corresponding to the total number of processes')
+
 # Required positional argument
 parser.add_argument('pid', type=int,
                     help='A required identification for logical process')
+
 
 # Required positional argument
 parser.add_argument('size', type=int,
@@ -121,12 +140,21 @@ parser.add_argument('iface', type=str,
                     help='A required string corresponding to the interface')
 
 
+# Required positional argument
+parser.add_argument(
+    "mode",
+    choices=["sync", "async"],
+    help="Chose the sync operation mode: 'sync' ou 'async'."
+)
+
 if __name__ == '__main__':
 
     args = parser.parse_args()
   
     pid = args.pid
     iface = args.iface
+    mode = args.mode
+    n_processes = args.np
 
     new_rec_thread = Thread(target=receive, args=(iface,))
     new_rec_thread.start()
