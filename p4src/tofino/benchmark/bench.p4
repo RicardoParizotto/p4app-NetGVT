@@ -17,7 +17,7 @@
 #endif
 
 #include "headers_l2.p4"
-#include "util.p4"
+#include "../util.p4"
 
 
 #define number_of_processes 5
@@ -27,7 +27,10 @@ struct metadata_t {
     bit<32> iterator_0;
     bit<32> iterator_1;
     bit<32> gvt;  
-    bit<32> max_recirc;        
+    bit<32> max_recirc;
+    bit<48> timestamp_aux; 
+    bit<32> timestamp_32; 
+    bit<32> index;      
 }
 
 // ---------------------------------------------------------------------------
@@ -90,6 +93,9 @@ Register<bit<32>, _>(1) LVT_pid_14;
 Register<bit<32>, _>(1) LVT_pid_15;
 Register<bit<32>, _>(1) GVT;
 
+Register<bit<32>, _>(10000) timestamps;
+Register<bit<32>, _>(1) index;
+
 // ---------------------------------------------------------------------------
 // Ingress Deparser
 // ---------------------------------------------------------------------------
@@ -128,7 +134,25 @@ control SwitchIngress(
 
 
     bit<32> aux_min;
+    
+    bit<48> entry_timestamp = 0;
+
+
+    RegisterAction<bit<32>, _, bit<32>>(index) getIndex = {
+    void apply(inout bit<32> value, out bit<32> rv) {
+            if ( value == 9999 ) value = 0;
+            else value = value + 1;
+            rv = value;
+        }
+    };
  
+ 
+    RegisterAction<bit<32>, _, bit<32>>(timestamps) saveTimestamp = {
+    void apply(inout bit<32> value, out bit<32> rv) {
+            value = ig_md.timestamp_32;
+            rv = value;
+        }
+    };
 
     RegisterAction<bit<32>, _, bit<32>>(LVT_pid_0) Update_lvt_pid_0 = {
     void apply(inout bit<32> value, out bit<32> rv) {
@@ -305,6 +329,9 @@ control SwitchIngress(
 
     apply {
 	if(hdr.gvt.isValid()){
+	        if(hdr.gvt.iterator == 0){
+	            hdr.gvt.tmp = ig_intr_md.ingress_mac_tstamp;
+	        }
 		ig_md.iterator_0  = Update_lvt_pid_0.execute(0);
 		ig_md.iterator_1  = Update_lvt_pid_1.execute(0);
 		aux_min = min(ig_md.iterator_0, ig_md.iterator_1);
@@ -324,7 +351,11 @@ control SwitchIngress(
 		hdr.gvt.gvt = ig_md.gvt;
                 load_rec_number.apply();
                 if(ig_md.max_recirc == hdr.gvt.iterator){
- 	               hdr.gvt.type = TYPE_DELIVER;
+                        ig_md.index = getIndex.execute(0);
+                        ig_md.timestamp_aux = hdr.gvt.tmp;
+                        ig_md.timestamp_32 = (bit<32>)(ig_intr_md.ingress_mac_tstamp - ig_md.timestamp_aux);
+                        saveTimestamp.execute(ig_md.index);
+ 	                hdr.gvt.type = TYPE_DELIVER;
         	        //eth_forward.apply();
                 	ig_intr_tm_md.mcast_grp_a =  1;
                 }else{
