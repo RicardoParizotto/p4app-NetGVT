@@ -28,7 +28,8 @@ struct metadata_t {
     bit<32> iterator_1;
     bit<32> gvt;  
     bit<32> max_recirc;
-    bit<48> timestamp_aux;        
+    bit<48> timestamp_aux;  
+    bit<32> index;      
 }
 
 // ---------------------------------------------------------------------------
@@ -147,7 +148,8 @@ control SwitchIngress(
  
     RegisterAction<bit<48>, _, bit<48>>(timestamps) saveTimestamp = {
     void apply(inout bit<48> value, out bit<48> rv) {
-            value = hdr.gvt.tmp;
+            value = ig_md.timestamp_aux;
+            rv = value;
         }
     };
 
@@ -348,8 +350,10 @@ control SwitchIngress(
 		hdr.gvt.gvt = ig_md.gvt;
                 load_rec_number.apply();
                 if(ig_md.max_recirc == hdr.gvt.iterator){
+                        ig_md.index = getIndex.execute(0);
                         ig_md.timestamp_aux = hdr.gvt.tmp;
-                        hdr.gvt.tmp = ig_intr_md.ingress_mac_tstamp - ig_md.timestamp_aux;
+                        ig_md.timestamp_aux = ig_intr_md.ingress_mac_tstamp - ig_md.timestamp_aux;
+                        hdr.gvt.tmp = saveTimestamp.execute(ig_md.index);
  	                hdr.gvt.type = TYPE_DELIVER;
         	        //eth_forward.apply();
                 	ig_intr_tm_md.mcast_grp_a =  1;
