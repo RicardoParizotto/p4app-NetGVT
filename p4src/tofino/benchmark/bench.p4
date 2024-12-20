@@ -28,7 +28,7 @@ struct metadata_t {
     bit<32> iterator_1;
     bit<32> gvt;  
     bit<32> max_recirc;
-    bi<48> timestamp_aux;        
+    bit<48> timestamp_aux;        
 }
 
 // ---------------------------------------------------------------------------
