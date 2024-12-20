@@ -28,7 +28,8 @@ struct metadata_t {
     bit<32> iterator_1;
     bit<32> gvt;  
     bit<32> max_recirc;
-    bit<48> timestamp_aux;  
+    bit<48> timestamp_aux; 
+    bit<32> timestamp_32; 
     bit<32> index;      
 }
 
@@ -92,7 +93,7 @@ Register<bit<32>, _>(1) LVT_pid_14;
 Register<bit<32>, _>(1) LVT_pid_15;
 Register<bit<32>, _>(1) GVT;
 
-Register<bit<48>, _>(10000) timestamps;
+Register<bit<32>, _>(10000) timestamps;
 Register<bit<32>, _>(1) index;
 
 // ---------------------------------------------------------------------------
@@ -146,9 +147,9 @@ control SwitchIngress(
     };
  
  
-    RegisterAction<bit<48>, _, bit<48>>(timestamps) saveTimestamp = {
-    void apply(inout bit<48> value, out bit<48> rv) {
-            value = ig_md.timestamp_aux;
+    RegisterAction<bit<32>, _, bit<32>>(timestamps) saveTimestamp = {
+    void apply(inout bit<32> value, out bit<32> rv) {
+            value = ig_md.timestamp_32;
             rv = value;
         }
     };
@@ -352,8 +353,8 @@ control SwitchIngress(
                 if(ig_md.max_recirc == hdr.gvt.iterator){
                         ig_md.index = getIndex.execute(0);
                         ig_md.timestamp_aux = hdr.gvt.tmp;
-                        ig_md.timestamp_aux = ig_intr_md.ingress_mac_tstamp - ig_md.timestamp_aux;
-                        hdr.gvt.tmp = saveTimestamp.execute(ig_md.index);
+                        ig_md.timestamp_32 = (bit<32>)(ig_intr_md.ingress_mac_tstamp - ig_md.timestamp_aux;)
+                        ig_md.timestamp_32 = saveTimestamp.execute(ig_md.index);
  	                hdr.gvt.type = TYPE_DELIVER;
         	        //eth_forward.apply();
                 	ig_intr_tm_md.mcast_grp_a =  1;
