@@ -347,7 +347,7 @@ control SwitchIngress(
 		hdr.gvt.gvt = ig_md.gvt;
                 load_rec_number.apply();
                 if(ig_md.max_recirc == hdr.gvt.iterator){
-                        entry_timestamp = hdr.gvt.tmp
+                        entry_timestamp = hdr.gvt.tmp;
                         hdr.gvt.tmp = ig_intr_md.ingress_mac_tstamp - entry_timestamp;
  	                hdr.gvt.type = TYPE_DELIVER;
         	        //eth_forward.apply();
