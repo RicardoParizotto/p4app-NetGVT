@@ -17,7 +17,7 @@
 #endif
 
 #include "headers_l2.p4"
-#include "util.p4"
+#include "../util.p4"
 
 
 #define number_of_processes 5
