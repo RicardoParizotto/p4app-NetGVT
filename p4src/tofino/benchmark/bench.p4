@@ -329,7 +329,7 @@ control SwitchIngress(
 
     apply {
 	if(hdr.gvt.isValid()){
-	        if(hdr.gvt.tmp == 0){
+	        if(hdr.gvt.iterator == 0){
 	            hdr.gvt.tmp = ig_intr_md.ingress_mac_tstamp;
 	        }
 		ig_md.iterator_0  = Update_lvt_pid_0.execute(0);
