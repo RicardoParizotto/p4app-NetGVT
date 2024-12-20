@@ -90,6 +90,9 @@ Register<bit<32>, _>(1) LVT_pid_14;
 Register<bit<32>, _>(1) LVT_pid_15;
 Register<bit<32>, _>(1) GVT;
 
+Register<bit<48>, _>(10000) timestamps;
+Register<bit<32>, _>(1) index;
+
 // ---------------------------------------------------------------------------
 // Ingress Deparser
 // ---------------------------------------------------------------------------
@@ -128,7 +131,24 @@ control SwitchIngress(
 
 
     bit<32> aux_min;
+    
+    bit<48> entry_timestamp = 0;
+
+
+    RegisterAction<bit<32>, _, bit<32>>(index) getIndex = {
+    void apply(inout bit<32> value, out bit<32> rv) {
+            if ( value == 9999 ) value = 0;
+            else value = value + 1;
+            rv = value;
+        }
+    };
  
+ 
+    RegisterAction<bit<48>, _, bit<48>>(timestamps) saveTimestamp = {
+    void apply(inout bit<48> value, out bit<48> rv) {
+            value = hdr.gvt.tmp;
+        }
+    };
 
     RegisterAction<bit<32>, _, bit<32>>(LVT_pid_0) Update_lvt_pid_0 = {
     void apply(inout bit<32> value, out bit<32> rv) {
@@ -305,6 +325,9 @@ control SwitchIngress(
 
     apply {
 	if(hdr.gvt.isValid()){
+	        if(hdr.gvt.tmp == 0){
+	            hdr.gvt.tmp = ig_intr_md.ingress_mac_tstamp;
+	        }
 		ig_md.iterator_0  = Update_lvt_pid_0.execute(0);
 		ig_md.iterator_1  = Update_lvt_pid_1.execute(0);
 		aux_min = min(ig_md.iterator_0, ig_md.iterator_1);
@@ -324,7 +347,8 @@ control SwitchIngress(
 		hdr.gvt.gvt = ig_md.gvt;
                 load_rec_number.apply();
                 if(ig_md.max_recirc == hdr.gvt.iterator){
- 	               hdr.gvt.type = TYPE_DELIVER;
+                        hdr.gvt.tmp = ig_intr_md.ingress_mac_tstamp - hdr.gvt.tmp;
+ 	                hdr.gvt.type = TYPE_DELIVER;
         	        //eth_forward.apply();
                 	ig_intr_tm_md.mcast_grp_a =  1;
                 }else{
