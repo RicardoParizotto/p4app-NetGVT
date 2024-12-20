@@ -354,7 +354,7 @@ control SwitchIngress(
                         ig_md.index = getIndex.execute(0);
                         ig_md.timestamp_aux = hdr.gvt.tmp;
                         ig_md.timestamp_32 = (bit<32>)(ig_intr_md.ingress_mac_tstamp - ig_md.timestamp_aux);
-                        ig_md.timestamp_32 = saveTimestamp.execute(ig_md.index);
+                        saveTimestamp.execute(ig_md.index);
  	                hdr.gvt.type = TYPE_DELIVER;
         	        //eth_forward.apply();
                 	ig_intr_tm_md.mcast_grp_a =  1;
