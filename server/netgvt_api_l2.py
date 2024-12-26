@@ -105,7 +105,7 @@ def send(iface, end_time):
             #calculates probability to send messages to processes in the simulation. I
             #In case the probability is higher than delta=50%,send a message to this process 
             for dst_pid in range(0, n_processes):
-                message_probability = random.randint(start, stop)
+                message_probability = random.randint(1, 100)
                 if dst_pid != pid and message_probability > 50:
                     pkt =  Ether(src=get_if_hwaddr(iface), dst='ff:ff:ff:ff:ff:ff', type = ETHERTYPE_GVT)
                     pkt = pkt / GvtProtocol(type=TYPE_PROPOSAL, value=lvt, src_pid=pid, dst_pid=dst_pid,  gvt=0, rec_control=0)
