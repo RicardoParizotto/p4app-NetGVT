@@ -65,7 +65,7 @@ def handle_pkt(pkt):
         print(lvt)
         print(pkt[GvtProtocol].value)
         #Just apply rollbacks in case this message is for the Pid that receveid the packet
-        if(pid == pkt[GvtProtocol.dst_pid]):
+        if(pid == pkt[GvtProtocol].dst_pid]):
             lock.acquire()
             if lvt > pkt[GvtProtocol].value:
                 print("rollback")
