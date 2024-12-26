@@ -107,7 +107,6 @@ def send(iface, end_time):
             for dst_pid in range(0, n_processes):
                 message_probability = random.randint(1, 100)
                 if dst_pid != pid and message_probability > 50:
-                    lvt = lvt + 1
                     pkt =  Ether(src=get_if_hwaddr(iface), dst='ff:ff:ff:ff:ff:ff', type = ETHERTYPE_GVT)
                     pkt = pkt / GvtProtocol(type=TYPE_PROPOSAL, value=lvt, src_pid=pid, dst_pid=dst_pid,  gvt=0, rec_control=0)
                     start_ppkt = time.time() #this was used for benchmarking  
