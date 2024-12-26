@@ -154,9 +154,11 @@ header gre_h {
 header gvt_h {
     bit<32> type;
     bit<32> pid;
+    bit<32> dst_pid;
     bit<32> value;
     bit<32> gvt;
-    bit<32> iterator;
+    bit<32> iterator; //used only for recirculation cases. Normal NetGVT operation does not need that  
+    bit<48> tmp;    //this is used only for debugging or benchmarking. If you remove this field, make sure to check the "shim layer" headers too. 
 }
 
 //this one is for resubmitions

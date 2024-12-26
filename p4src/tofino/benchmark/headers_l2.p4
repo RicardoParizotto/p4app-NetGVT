@@ -154,6 +154,7 @@ header gre_h {
 header gvt_h {
     bit<32> type;
     bit<32> pid;
+    bit<32> dst_pid;
     bit<32> value;
     bit<32> gvt;
     bit<32> iterator; //used only for recirculation cases. Normal NetGVT operation does not need that  
