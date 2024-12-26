@@ -66,12 +66,12 @@ def handle_pkt(pkt):
         print(pkt[GvtProtocol].value)
         #Just apply rollbacks in case this message is for the Pid that receveid the packet
         if(pid == pkt[GvtProtocol.dst_pid]):
-        	lock.acquire()
-		    if lvt > pkt[GvtProtocol].value:
-		        print("rollback")
-		        rollback_counter = rollback_counter + 1
-		        lvt = gvt
-		    lock.release()
+            lock.acquire()
+            if lvt > pkt[GvtProtocol].value:
+                print("rollback")
+                rollback_counter = rollback_counter + 1
+                lvt = gvt
+            lock.release()
 		         
 
 def receive(iface):
@@ -107,8 +107,8 @@ def send(iface, end_time):
             for dst_pid in range(0, n_processes):
                 message_probability = random.randint(start, stop)
                 if dst_pid != pid and message_probability > 50:
-	                pkt =  Ether(src=get_if_hwaddr(iface), dst='ff:ff:ff:ff:ff:ff', type = ETHERTYPE_GVT)
-	                pkt = pkt / GvtProtocol(type=TYPE_PROPOSAL, value=lvt, src_pid=pid, dst_pid=dst_pid,  gvt=0, rec_control=0)
+                    pkt =  Ether(src=get_if_hwaddr(iface), dst='ff:ff:ff:ff:ff:ff', type = ETHERTYPE_GVT)
+                    pkt = pkt / GvtProtocol(type=TYPE_PROPOSAL, value=lvt, src_pid=pid, dst_pid=dst_pid,  gvt=0, rec_control=0)
                     start_ppkt = time.time() #this was used for benchmarking  
                     sendp(pkt, iface=iface, verbose=False)
         lock.release()
