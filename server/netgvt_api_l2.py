@@ -107,7 +107,7 @@ def send(iface, end_time):
             #In case the probability is higher than delta=50%,send a message to this process 
             for dst_pid in range(0, n_processes):
                 message_probability = random.randint(1, 100)
-                if dst_pid != pid and message_probability > 75:
+                if dst_pid != pid and message_probability > 25:
                     pkt =  Ether(src=get_if_hwaddr(iface), dst='ff:ff:ff:ff:ff:ff', type = ETHERTYPE_GVT)
                     pkt = pkt / GvtProtocol(type=TYPE_PROPOSAL, value=lvt, src_pid=pid, dst_pid=dst_pid,  gvt=0, rec_control=0)
                     start_ppkt = time.time() #this was used for benchmarking  
@@ -121,7 +121,7 @@ def send(iface, end_time):
     print("number of rollbacks: " + str(rollback_counter))
 
 
-    file = open(f"/home/p4/p4app-NetGVT/results/p_hold_25_rec_{mode}_pid{str(pid)}{str(n_processes)}_size{str(end_time)}.txt", "a+")
+    file = open(f"/home/p4/p4app-NetGVT/results/p_hold_75_rec_{mode}_pid{str(pid)}{str(n_processes)}_size{str(end_time)}.txt", "a+")
     file.write("total time, " + total + "\n") 
     file.write("number of rollbacks, " + str(rollback_counter) + "\n")
     file.close()
