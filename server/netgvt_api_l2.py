@@ -117,7 +117,7 @@ def send(iface, end_time):
 #   lat = np.append(lat, 1000*(end-start))
     total = str(end-start)
     print("total time: " + total)
-    print("number of rollbacks: " + rollback_counter)
+    print("number of rollbacks: " + str(rollback_counter))
 
 
     file = open(f"/home/p4/p4app-NetGVT/results/p_hold_rec_{mode}_pid{str(pid)}{str(n_processes)}_size{str(end_time)}.txt", "a+")
