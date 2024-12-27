@@ -122,7 +122,8 @@ def send(iface, end_time):
 
 
     file = open(f"/home/p4/p4app-NetGVT/results/p_hold_rec_{mode}_pid{str(pid)}{str(n_processes)}_size{str(end_time)}.txt", "a+")
-    file.write("total time, " + total + "\n" + "number of rollbacks, " + rollback_counter + "\n") 
+    file.write("total time, " + total + "\n") 
+    file.write("number of rollbacks, " + str(rollback_counter) + "\n")
     file.close()
 
     time.sleep(10) 
